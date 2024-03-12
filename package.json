@@ -1,0 +1,33 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^3.10.3",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.11.4",
+    "@iconify/json": "^2.2.190",
+    "@lehoczky/postcss-fluid": "^1.0.3",
+    "@nuxt/content": "^2.12.1",
+    "@types/css-tree": "^2.3.7",
+    "@unocss/nuxt": "^0.58.5",
+    "@unocss/preset-rem-to-px": "^0.58.5",
+    "@unocss/reset": "^0.58.5",
+    "@unocss/transformer-directives": "^0.58.5",
+    "@unocss/transformer-variant-group": "^0.58.5",
+    "css-tree": "^2.3.1",
+    "postcss-nested": "^6.0.1",
+    "postcss-value-parser": "^4.2.0",
+    "unocss-preset-fluid": "^1.0.2"
+  }
+}
