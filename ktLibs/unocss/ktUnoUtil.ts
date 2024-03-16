@@ -1,16 +1,5 @@
 export { fluid } from '../utils/fluid'
 
-export function cnvStr(input: any) {
-  const map = {
-    c: 'center',
-    l: 'left',
-    r: 'right',
-    b: 'bottom',
-  } as any
-
-  return map[input] || input
-}
-
 type ParsedValue = {
   value: string
   cssVarName: string
@@ -61,17 +50,32 @@ export class KtUnoCssVar {
 
   toCss(): string {
     return Object.entries(this.parsedSet)
-      .map(([key, { value, cssVarName }]) => `${cssVarName}: ${value};`)
+      .map(([key, { value, cssVarName }]) => {
+        if (this.prefix === 'fz' && Array.isArray(value)) {
+          return `${cssVarName}: ${value[0]};`
+        }
+        return `${cssVarName}: ${value};`
+      })
       .join('\n')
   }
 
   toUno(): Record<string, string> {
     return Object.entries(this.parsedSet).reduce(
-      (result, [key, { cssVarName }]) => {
-        result[key] = `var(${cssVarName})`
-        return result
+      (acc, [key, { cssVarName, raw }]) => {
+        if (this.prefix === 'fz') {
+          const extraStyle = Array.isArray(raw) ? raw[1] : {}
+          acc[key] = [`var(${cssVarName})`, extraStyle]
+          return acc
+        } else if (this.prefix === 's') {
+          // スペーシングの場合は、calc() で囲まないとマイナス値のクラスが有効にならない
+          acc[key] = `calc(var(${cssVarName}))`
+          return acc
+        } else {
+          acc[key] = `var(${cssVarName})`
+          return acc
+        }
       },
-      {} as Record<string, string>
+      {} as Record<string, any>
     )
   }
 }

@@ -1,37 +1,47 @@
 <script setup lang="ts">
-const navs = [
-  { label: 'お知らせ', href: '/' },
-  { label: '当院について', href: '/' },
-  { label: '検査と設備', href: '/' },
-  { label: '症状から探す', href: '/' },
-  { label: '診療案内', href: '/' },
-]
+const siteStore = useSiteStore()
 </script>
 
 <template>
   <footer
-    container
-    stack-box-sm
-    py-box
-    centers
-    un-border="t-1px ink opacity-20"
+    class="ktc py-box flex flex-col items-center gap-box-sm border-t-1px border-black/10"
+    xxl="flex-row justify-between items-start"
   >
-    <ul gap-col-box-sm gap-row-sm flex flex-wrap justify-center>
-      <li v-for="nav in navs">
-        <a :href="nav.href">{{ nav.label }}</a>
-      </li>
-    </ul>
-    <div centers>
-      <div gap-sm flex items-baseline>
-        <small>TEL:</small>
-        <div class="text-(head)">023-624-8686</div>
+    <!-- ナビ -->
+    <div class="" xxl="order-1 flex flex-col gap-md mt-6px">
+      <ul class="gap-lg flex flex-wrap justify-center">
+        <li v-for="nav in siteStore.navs.global">
+          <a :href="nav.href" class="text-md whitespace-nowrap">{{
+            nav.label
+          }}</a>
+        </li>
+      </ul>
+
+      <!-- xxl: コピーライトとロゴ -->
+      <div class="flex flex-col items-end gap-md" lt-xxl="hidden">
+        <img src="/img/logo.svg" class="w-127-133" alt="" />
+        <small class="text-sm text-ink opacity-50"
+          >© Haga Gastrointestinal Medical Clinic.</small
+        >
       </div>
-      <p class="fax-023-624-3339">FAX: 023-624-3339</p>
-      <p class="_990-0025-2-15-1">〒990-0025 山形市あこや町2-15-1</p>
     </div>
-    <div centers space-y-lg>
-      <img src="/img/logo.svg" alt="" />
-      <small text-(sm ink opacity-70)
+
+    <!-- スケジュール画像 -->
+    <figure class="max-w-450px">
+      <img src="/img/opening-hours.svg" alt="" />
+    </figure>
+
+    <!-- 電話番号/他 -->
+    <div class="flex flex-col gap-xs [&>*]:text-center" xxl="[&>*]:text-left">
+      <p class="text-disp"><small class="mr-md">TEL:</small>023-624-8686</p>
+      <p class="text-md">FAX: 023-624-3339</p>
+      <p class="text-md">〒990-0025 山形市あこや町2-15-1</p>
+    </div>
+
+    <!-- lt-xxl: コピーライトとロゴ -->
+    <div class="flex flex-col items-center gap-md" xxl="hidden">
+      <img src="/img/logo.svg" class="w-127-133" alt="" />
+      <small class="text-sm text-ink opacity-50"
         >© Haga Gastrointestinal Medical Clinic.</small
       >
     </div>

@@ -1,12 +1,14 @@
 <script setup>
-import '@unocss/reset/tailwind-compat.css'
+// import '@unocss/reset/tailwind-compat.css'
 // import '~/assets/styles/global.css'
 </script>
 
 <template>
-  <SiteHeader />
-  <NuxtPage />
-  <SiteFooter />
+  <div>
+    <SiteHeader />
+    <NuxtPage />
+    <SiteFooter />
+  </div>
 </template>
 
-<style lang="scss"></style>
+<style></style>

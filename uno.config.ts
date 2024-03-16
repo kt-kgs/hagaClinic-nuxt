@@ -1,3 +1,5 @@
+import fs from 'fs'
+
 // uno.config.ts
 import {
   defineConfig,
@@ -20,8 +22,8 @@ import presetRemToPx from '@unocss/preset-rem-to-px'
 
 const container = new KtUnoCssVar('container', {
   max: '1664px',
-  'max-result': `min(100% - var(--container-pad) * 2, var(--container-max))`,
-  pad: fluid(16, 64),
+  width: `min(100% - var(--container-pad) * 2, var(--container-max))`,
+  pad: fluid(16, 96),
   out: `max(var(--container-pad), 100% - var(--container-max) / 2)`,
 })
 
@@ -29,9 +31,10 @@ const container = new KtUnoCssVar('container', {
  * スペーシング
  */
 const spacing = new KtUnoCssVar('s', {
-  sm: fluid(4, 8),
-  md: fluid(8, 16),
-  lg: fluid(24, 32),
+  xs: fluid(4, 8),
+  sm: fluid(8, 16),
+  md: fluid(16, 18),
+  lg: fluid(20, 24),
   box: {
     sm: fluid(32, 48),
     DEFAULT: fluid(48, 64),
@@ -68,21 +71,33 @@ const color = new KtUnoCssVar('c', {
 /**
  * フォントサイズ
  */
-
-const fontSize = new KtUnoCssVar('fs', {
+const fontSize = new KtUnoCssVar('fz', {
   xs: fluid(12, 14),
   sm: fluid(14, 16),
-  lg: fluid(20, 24),
-  base: fluid(16, 18),
-  disp: fluid(24, 32),
+  md: fluid(16, 18),
+  lg: fluid(20, 22),
+  disp: {
+    sm: fluid(22, 26),
+    DEFAULT: fluid(24, 32),
+    lg: fluid(32, 48),
+  },
 })
 
 export default defineConfig<Theme>({
   preflights: [
     {
-      getCSS: (arg) =>
-        css`
+      getCSS: (arg) => /*css*/ `
+                  ${fs.readFileSync(
+                    'node_modules/@unocss/reset/tailwind-compat.css',
+                    'utf8'
+                    // readFileSyncはここで直接読み込まないと、unocssの拡張が機能しなくなる
+                  )}`,
+      layer: 'preflights',
+    },
+    {
+      getCSS: (arg) => /*css*/ `
           :root {
+
             ${spacing.toCss()}
             ${color.toCss()}
             ${fontSize.toCss()}
@@ -91,55 +106,78 @@ export default defineConfig<Theme>({
           body {
             --uno: text-md text-ink;
             background: rgb(0 0 0 / 4%);
+            line-height: 1.8;
+            overflow-x: clip;
           }
-        `.styles,
+          img {
+            width: 100%;
+          }
+          .ktc .ktc {
+            width: 100%;
+          }
+
+        `,
+      layer: 'base',
     },
   ],
   rules: [
     [
-      /^aspect-(\d+)x(\d+)$/,
-      (match) => ({ 'aspect-ratio': `${match[1]}/${match[2]}` }),
+      /^text-(\d+)-(\d+)$/,
+      (m) => {
+        return { 'font-size': fluid(+m[1], +m[2]) }
+      },
+    ],
+    [
+      /^w-(\d+)-(\d+)$/,
+      (m) => {
+        return { width: fluid(+m[1], +m[2]) }
+      },
+    ],
+    [
+      /^max-w-(\d+)-(\d+)$/,
+      (m) => {
+        return { 'max-width': fluid(+m[1], +m[2]) }
+      },
     ],
   ],
   shortcuts: [
-    [/^stack-(.+)$/, (match) => `[&>*:not(:first-child)]:mt-${match[1]}`],
-    { center: 'w-fit mx-a block' },
-    { centers: '[&>*]:center' },
-    {
-      container: 'max-w-[--container-max-result] mx-auto',
-    },
-    [/^containers$/, (m) => `[&>*]:container`],
-    [
-      /^grid-through$/,
-      (m) =>
-        `contents [&>*]:grid [&>*]:grid-cols-subgrid [&>*]:grid-col-span-full`,
-    ],
-    [
-      /^(.*)fluid\((\d),(\d)\)(.*)$/,
-      (m) => `${m[1]}${fluid(+m[2], +m[3])}${m[4]}`,
-    ],
+    [/^ktc$/, (m) => `w-[var(--container-width)] mx-auto`],
+    [/^ktcs$/, (m) => `[&>*]:ktc`],
+    [/^center$/, (m) => `mx-auto w-fit`],
+    [/^centers$/, (m) => `[&>*]:center`],
+    // [
+    //   /^site-grid$/,
+    //   (m) =>
+    //     `grid grid-cols-[1fr_var(--container-width)_1fr] [:where(&>*)]:grid-col-[2/-2]`,
+    // ],
+    // [/^site-grid-nest$/, (m) => `grid grid-cols-subgrid col-span-full`],
   ],
   theme: {
-    colors: color.toUno(),
+    colors: {
+      ...color.toUno(),
+    },
     spacing: {
       ...spacing.toUno(),
     },
     borderRadius: {
       DEFAULT: fluid(8, 16),
     },
-    // width: width,
-    // maxWidth: width,
     container: {
       maxWidth: {},
     },
     breakpoints: {
-      sm: '320px',
-      md: '640px',
+      sm: '640px',
+      md: '768px',
       lg: '1024px',
       xl: '1280px',
+      xxl: '1536px',
     },
     fontSize: {
       ...fontSize.toUno(),
+    },
+    lineHeight: {
+      DEFAULT: '3',
+      test: '3',
     },
   },
   transformers: [transformerDirectives(), transformerVariantGroup()],
@@ -160,27 +198,14 @@ export default defineConfig<Theme>({
     //     spaceHey: [32, 64],
     //   },
     // }),
-    presetRemToPx(),
+    // presetRemToPx(),
     presetWebFonts({
       provider: 'google', // default provider
       fonts: {
         // these will extend the default theme
-        ja: 'Zen+Kaku+Gothic+New',
-        sans: 'Roboto',
-        mono: ['Fira Code', 'Fira Mono:400,700'],
+        // ja: 'Zen+Kaku+Gothic+New',
         // custom ones
-        lobster: 'Lobster',
-        lato: [
-          {
-            name: 'Lato',
-            weights: ['400', '700'],
-            italic: true,
-          },
-          {
-            name: 'sans-serif',
-            provider: 'none',
-          },
-        ],
+        // lobster: 'Lobster',
       },
     }),
     presetTypography(),
@@ -200,6 +225,5 @@ const result = parsedValue.walk((node) => {
     const args = node.nodes
       .filter((node) => node.type === 'word')
       .map((node) => +node.value)
-    console.log(fluid(args[0], args[1]))
   }
 })

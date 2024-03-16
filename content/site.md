@@ -8,11 +8,3 @@ gNav:
     { label: '診療案内', url: '/contact/' },
   ]
 ---
-
-こんにちわ
-![](/img/logo.svg)
-![](/img/noImage.png)
-
-::card
-カードコンテンツ
-::
