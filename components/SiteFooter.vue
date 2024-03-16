@@ -4,7 +4,7 @@ const siteStore = useSiteStore()
 
 <template>
   <footer
-    class="ktc py-box flex flex-col items-center gap-box-sm border-t-1px border-black/10"
+    class="px-container-pad py-box flex flex-col items-center gap-box-sm border-t-1px border-black/10"
     xxl="flex-row justify-between items-start"
   >
     <!-- ナビ -->

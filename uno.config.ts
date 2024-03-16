@@ -24,7 +24,7 @@ const container = new KtUnoCssVar('container', {
   max: '1664px',
   width: `min(100% - var(--container-pad) * 2, var(--container-max))`,
   pad: fluid(16, 96),
-  out: `max(var(--container-pad), 100% - var(--container-max) / 2)`,
+  out: `max(var(--container-pad),(100vw - var(--container-max))/2)`,
 })
 
 /**
@@ -41,10 +41,11 @@ const spacing = new KtUnoCssVar('s', {
     lg: fluid(64, 96),
   },
   sect: {
-    DEFAULT: fluid(80, 128),
+    DEFAULT: fluid(80, 160),
   },
   container: {
     pad: `var(--container-pad)`,
+    out: `var(--container-out)`,
   },
 })
 

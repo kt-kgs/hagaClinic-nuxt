@@ -4,10 +4,10 @@
 </script>
 
 <template>
-  <div>
+  <div class="relative min-h-100vh">
     <SiteHeader />
     <NuxtPage />
-    <SiteFooter />
+    <SiteFooter class="sticky top-100vh" />
   </div>
 </template>
 

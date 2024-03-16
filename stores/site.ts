@@ -9,7 +9,7 @@ export const useSiteStore = defineStore('site', () => {
     global: [
       { label: 'お知らせ', href: '/' },
       { label: '当院について', href: '/about/' },
-      { label: '検査と設備', href: '/' },
+      { label: '検査と設備', href: '/facilities/' },
       { label: '症状から探す', href: '/' },
       { label: '診療案内', href: '/' },
     ],
