@@ -55,6 +55,7 @@ const spacing = new KtUnoCssVar('s', {
 const color = new KtUnoCssVar('c', {
   ink: {
     DEFAULT: '#4A4A4A',
+    text: '#4A4A4A',
     light: '#4A4A4A',
     inv: 'var(--c-paper)',
   },
@@ -63,9 +64,11 @@ const color = new KtUnoCssVar('c', {
   },
   primary: {
     DEFAULT: '#56C1BB',
+    text: '#22A29B',
   },
-  hey: {
-    alt: 'purple',
+  secondary: {
+    DEFAULT: '#FFCF52',
+    text: '#EC8F03',
   },
 })
 
@@ -98,7 +101,6 @@ export default defineConfig<Theme>({
     {
       getCSS: (arg) => /*css*/ `
           :root {
-
             ${spacing.toCss()}
             ${color.toCss()}
             ${fontSize.toCss()}
@@ -108,7 +110,9 @@ export default defineConfig<Theme>({
             --uno: text-md text-ink;
             background: rgb(0 0 0 / 4%);
             line-height: 1.8;
+            overflow-x: hidden;
             overflow-x: clip;
+            font-family: "Zen Kaku Gothic New", sans-serif;
           }
           img {
             width: 100%;
@@ -123,36 +127,40 @@ export default defineConfig<Theme>({
   ],
   rules: [
     [
-      /^text-(\d+)-(\d+)$/,
+      /^text-(\d+)px-(\d+)px$/,
       (m) => {
         return { 'font-size': fluid(+m[1], +m[2]) }
       },
     ],
     [
-      /^w-(\d+)-(\d+)$/,
+      /^w-(\d+)px-(\d+)px$/,
       (m) => {
         return { width: fluid(+m[1], +m[2]) }
       },
     ],
     [
-      /^max-w-(\d+)-(\d+)$/,
+      /^max-w-(\d+)px-(\d+)px$/,
       (m) => {
         return { 'max-width': fluid(+m[1], +m[2]) }
       },
     ],
+    [
+      /^wbrs$/,
+      (m) => ({
+        // 'word-break': 'keep-all',
+        'word-break': 'auto-phrase',
+        'overflow-wrap': 'anywhere',
+      }),
+    ],
+    // [/^break-phrase$/, (m) => ({ 'word-break': 'auto-phrase' })],
   ],
   shortcuts: [
     [/^ktc$/, (m) => `w-[var(--container-width)] mx-auto`],
     [/^ktcs$/, (m) => `[&>*]:ktc`],
     [/^center$/, (m) => `mx-auto w-fit`],
     [/^centers$/, (m) => `[&>*]:center`],
-    // [
-    //   /^site-grid$/,
-    //   (m) =>
-    //     `grid grid-cols-[1fr_var(--container-width)_1fr] [:where(&>*)]:grid-col-[2/-2]`,
-    // ],
-    // [/^site-grid-nest$/, (m) => `grid grid-cols-subgrid col-span-full`],
   ],
+  blocklist: ['container'],
   theme: {
     colors: {
       ...color.toUno(),
@@ -162,9 +170,6 @@ export default defineConfig<Theme>({
     },
     borderRadius: {
       DEFAULT: fluid(8, 16),
-    },
-    container: {
-      maxWidth: {},
     },
     breakpoints: {
       sm: '640px',
@@ -185,28 +190,24 @@ export default defineConfig<Theme>({
   presets: [
     // presetMini(),
     presetUno(),
-    // presetWind(),
-    presetIcons(),
+    presetIcons({
+      extraProperties: {
+        display: 'inline-block',
+        'vertical-align': 'middle',
+      },
+      collections: {
+        custom: {
+          symbol:
+            '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"> <path d="M20.27 3.73c-2.114-2.115-5.475-2.466-8.27-.067-2.795-2.4-6.156-2.048-8.27.067C1.615 5.844 1.264 9.205 3.663 12c-2.4 2.795-2.048 6.156.067 8.27 2.114 2.115 5.475 2.466 8.27.067 2.795 2.4 6.156 2.048 8.27-.067 2.115-2.114 2.466-5.475.067-8.27 2.4-2.795 2.048-6.156-.067-8.27Z"/> </svg> ',
+        },
+      },
+    }),
     presetAttributify(),
     presetTagify(),
-    // presetFluid({
-    //   maxWidth: 1920,
-    //   minWidth: 375,
-    //   extendMinWidth: null,
-    //   ranges: {
-    //     block: [32, 64],
-    //     sBlock: [32, 64],
-    //     spaceHey: [32, 64],
-    //   },
-    // }),
-    // presetRemToPx(),
     presetWebFonts({
       provider: 'google', // default provider
       fonts: {
-        // these will extend the default theme
-        // ja: 'Zen+Kaku+Gothic+New',
-        // custom ones
-        // lobster: 'Lobster',
+        ja: 'Zen Kaku Gothic New',
       },
     }),
     presetTypography(),

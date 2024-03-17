@@ -6,10 +6,12 @@ const siteStore = useSiteStore()
   <header>
     <div class="flex w-full items-center justify-between p-container-pad" lg="">
       <div class="shrink-0">
-        <img src="/img/logo.svg" class="sticky w-180-326" alt="" />
+        <NuxtLink to="/"
+          ><img src="/img/logo.svg" class="sticky w-180px-326px" alt=""
+        /></NuxtLink>
       </div>
 
-      <!-- PCのみ -->
+      <!-- Desktop -->
       <div class="lt-lg:hidden flex gap-box-sm items-baseline">
         <ul class="gap-lg flex">
           <li v-for="nav in siteStore.navs.global" :key="nav.label">
@@ -20,8 +22,9 @@ const siteStore = useSiteStore()
       </div>
     </div>
 
-    <!-- スマホのみ -->
+    <!-- Mobile -->
     <div class="lg:hidden">
+      <!-- Mobile Button -->
       <a
         href="#"
         class="size-48px bg-white grid place-items-center rounded-full fixed z-101 right-container-pad top-[fluid(16,24)]"
@@ -50,6 +53,8 @@ const siteStore = useSiteStore()
           </g>
         </svg>
       </a>
+
+      <!-- Mobile Modal Nav -->
       <nav
         class="fixed bg-primary inset-0 p-container-pad z-100 text-ink-inv"
         :class="{ hidden: !siteStore.isSpGNavShow }"

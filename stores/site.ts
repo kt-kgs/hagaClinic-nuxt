@@ -7,11 +7,11 @@ export const useSiteStore = defineStore('site', () => {
 
   const navs = ref({
     global: [
-      { label: 'お知らせ', href: '/' },
+      { label: 'お知らせ', href: '/news/' },
       { label: '当院について', href: '/about/' },
       { label: '検査と設備', href: '/facilities/' },
-      { label: '症状から探す', href: '/' },
-      { label: '診療案内', href: '/' },
+      { label: '症状から探す', href: '/conditions/' },
+      { label: '診療案内', href: '/guide/' },
     ],
   })
 

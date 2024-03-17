@@ -1,0 +1,18 @@
+/* .list {
+  li {
+    position: relative;
+    padding-left: 1.25em;
+    &:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      width: 0.25em;
+      height: 0.25em;
+      border-radius: 9999px;
+      background-color: currentColor;
+      position: absolute;
+      inset: 0.8em auto auto 0.5em;
+      margin: auto;
+    }
+  }
+} */

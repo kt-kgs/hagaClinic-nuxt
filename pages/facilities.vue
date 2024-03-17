@@ -1,9 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <PageLayout class="pb-sect">
+  <PageLayout>
     <PageHeader />
-    <main class="grid gap-sect mt-sect">
+    <main class="grid gap-sect mt-sect pb-sect">
       <!-- 検査セクション -->
       <section class="grid gap-box-lg">
         <header>

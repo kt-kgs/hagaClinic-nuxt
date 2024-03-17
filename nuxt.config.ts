@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   modules: ['@unocss/nuxt', '@nuxt/content', '@pinia/nuxt'],
   postcss: {
     plugins: {
+      'postcss-nested': {},
       './ktLibs/postcss/postcss-kt-fluid': {
         min: '640px',
         max: '1920px',

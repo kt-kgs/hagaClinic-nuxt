@@ -12,7 +12,7 @@ const props = defineProps<{
   >
     {{ label || 'label' }}
     <span
-      class="i-mdi:chevron-right text-1.25em text-(primary) inline-block"
+      class="i-mdi:chevron-right text-1.25em text-primary inline-block"
     ></span>
   </a>
 </template>

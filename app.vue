@@ -1,6 +1,12 @@
 <script setup>
 // import '@unocss/reset/tailwind-compat.css'
-// import '~/assets/styles/global.css'
+import '~/assets/styles/global.css'
+
+useHead({
+  htmlAttrs: {
+    lang: 'ja',
+  },
+})
 </script>
 
 <template>

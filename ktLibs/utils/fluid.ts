@@ -15,7 +15,7 @@ function fluid(
 ): string {
   // default options
   const defaultOpts = {
-    minWidth: 640,
+    minWidth: 375,
     maxWidth: 1920,
     extMinSize: false,
     extMaxSize: false,

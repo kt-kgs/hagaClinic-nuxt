@@ -26,11 +26,11 @@ const route = useRoute()
         class="ktc gap-lg grid"
         lg="order--1 self-center justify-self-end mx-none"
       >
-        <h2 class="text-center text-disp-lg">
-          「痛みの少ない医療」<br />をお届けします
+        <h2 class="text-center text-disp-lg font-700 wbrs">
+          「痛みの少ない医療」を<br />お届けします
         </h2>
-        <p class="text-center">
-          胃内視鏡検査・大腸内視鏡検査は、<br />楽で快適に検査および処置が<br />受けられるよう<br />配慮しております。
+        <p class="text-center wbrs">
+          胃内視鏡検査・大腸内視鏡検査は、楽で快適に検査および処置が受けられるよう配慮しております。
         </p>
         <BtnBase label="当院について詳しく" class="mx-auto" />
       </div>
