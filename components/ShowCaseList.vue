@@ -78,7 +78,7 @@ const posts = [
             class="border-b-(1px ink-inv) gap-sm py-0.5em flex justify-between items-center"
           >
             <span class="">{{ link.label }}</span>
-            <span i-mdi:chevron-right></span>
+            <span class="i-mdi:chevron-right"></span>
           </li>
         </ul>
       </article>

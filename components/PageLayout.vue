@@ -30,19 +30,9 @@
         </ul>
       </nav>
     </div>
-    <!-- <nav
-      class="grid gap-lg py-box"
-      lg="py-none sticky top-box grid-col-start-1 row-span-2 grid content-start px-20% gap-sm gap-y-box"
-    >
-      <div class="ml-box" lg="">
-        <h2 class="text-disp text-center" lg="text-left">当院について</h2>
-      </div>
-    </nav> -->
-
-    <!-- Main Start -->
-    <main class="">
+    <div class="grid gap-sect">
       <slot></slot>
-    </main>
+    </div>
   </div>
 </template>
 

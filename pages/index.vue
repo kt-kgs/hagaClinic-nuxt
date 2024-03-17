@@ -26,7 +26,7 @@ const route = useRoute()
         class="ktc gap-lg grid"
         lg="order--1 self-center justify-self-end mx-none"
       >
-        <h2 class="text-center text-disp-lg font-700 wbrs">
+        <h2 class="text-center text-disp-lg font-500 wbrs">
           「痛みの少ない医療」を<br />お届けします
         </h2>
         <p class="text-center wbrs">

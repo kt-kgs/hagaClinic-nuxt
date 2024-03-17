@@ -2,9 +2,9 @@
 
 <template>
   <PageLayout>
-    <PageHeader></PageHeader>
-    <main class="grid mt-sect gap-sect pb-sect">
-      <section>
+    <PageHeader />
+    <PageMain>
+      <PageSection title="症状から探す">
         <ul class="grid gap-box-lg">
           <li v-for="post in 8">
             <article class="grid gap-lg @container">
@@ -59,8 +59,8 @@
             </article>
           </li>
         </ul>
-      </section>
-    </main>
+      </PageSection>
+    </PageMain>
   </PageLayout>
 </template>
 

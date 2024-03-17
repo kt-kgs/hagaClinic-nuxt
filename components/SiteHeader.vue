@@ -12,10 +12,14 @@ const siteStore = useSiteStore()
       </div>
 
       <!-- Desktop -->
-      <div class="lt-lg:hidden flex gap-box-sm items-baseline">
+      <div
+        class="lt-lg:hidden flex gap-y-lg gap-x-box-sm items-baseline flex-wrap justify-end"
+      >
         <ul class="gap-lg flex">
           <li v-for="nav in siteStore.navs.global" :key="nav.label">
-            <NuxtLink :to="nav.href" class="text-lg">{{ nav.label }}</NuxtLink>
+            <NuxtLink :to="nav.href" class="text-lg whitespace-nowrap">{{
+              nav.label
+            }}</NuxtLink>
           </li>
         </ul>
         <p class="text-sm font-400">TEL: 023-624-8686</p>

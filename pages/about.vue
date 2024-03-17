@@ -3,12 +3,9 @@
 <template>
   <PageLayout>
     <PageHeader />
-    <main class="grid mt-sect gap-sect pb-sect">
+    <PageMain>
       <!-- 4 Feature Section -->
-      <section class="ktc grid gap-box-lg">
-        <header>
-          <h2 class="text-disp">4つの特色</h2>
-        </header>
+      <PageSection title="4つの特色">
         <ul class="grid gap-box">
           <li
             v-for="post in 4"
@@ -28,21 +25,15 @@
             </p>
           </li>
         </ul>
-      </section>
+      </PageSection>
 
       <!-- Doctor Introduce Section  -->
-      <section class="ktc grid gap-box-lg">
-        <header>
-          <h2 class="text-disp">医師の紹介</h2>
-        </header>
+      <PageSection title="医師の紹介">
         <DoctorList />
-      </section>
+      </PageSection>
 
       <!-- Landscape Gallery Section -->
-      <section class="ktc grid gap-box-lg">
-        <header>
-          <h2 class="text-disp">院内の風景</h2>
-        </header>
+      <PageSection title="院内の風景あ">
         <ul class="grid grid-cols-2 gap-sm">
           <li v-for="p in 8">
             <img
@@ -52,8 +43,8 @@
             />
           </li>
         </ul>
-      </section>
-    </main>
+      </PageSection>
+    </PageMain>
   </PageLayout>
 </template>
 

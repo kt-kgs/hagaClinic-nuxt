@@ -3,14 +3,8 @@
 <template>
   <PageLayout>
     <PageHeader />
-    <main class="grid gap-sect mt-sect pb-sect">
-      <!-- 検査セクション -->
-      <section class="grid gap-box-lg">
-        <header>
-          <h2 class="text-disp">当院で行える検査</h2>
-        </header>
-
-        <!-- Articles -->
+    <PageMain>
+      <PageSection title="当院で行える検査">
         <ul class="grid gap-box">
           <li v-for="v in 3">
             <article
@@ -48,15 +42,9 @@
             </article>
           </li>
         </ul>
-      </section>
-
-      <!-- 機材セクション -->
-      <section class="grid gap-box-lg">
-        <header>
-          <h2 class="text-disp">当院で行える検査</h2>
-        </header>
-
-        <ul
+      </PageSection>
+      <PageSection title="設備の紹介"
+        ><ul
           class="grid gap-box grid-cols-[repeat(auto-fill,minmax(300px,1fr))]"
         >
           <li v-for="post in 4">
@@ -75,8 +63,8 @@
             </article>
           </li>
         </ul>
-      </section>
-    </main>
+      </PageSection>
+    </PageMain>
   </PageLayout>
 </template>
 

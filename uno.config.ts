@@ -111,7 +111,9 @@ export default defineConfig<Theme>({
             background: rgb(0 0 0 / 4%);
             line-height: 1.8;
             overflow-x: hidden;
-            overflow-x: clip;
+            @supports (overflow: clip) {
+              overflow-x: clip;
+            }
             font-family: "Zen Kaku Gothic New", sans-serif;
           }
           img {
@@ -210,7 +212,7 @@ export default defineConfig<Theme>({
         ja: 'Zen Kaku Gothic New',
       },
     }),
-    presetTypography(),
+    // presetTypography(),
   ],
 })
 
