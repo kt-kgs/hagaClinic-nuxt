@@ -34,7 +34,7 @@ const spacing = new KtUnoCssVar('s', {
   xs: fluid(4, 8),
   sm: fluid(8, 16),
   md: fluid(16, 18),
-  lg: fluid(20, 24),
+  lg: fluid(20, 28),
   box: {
     sm: fluid(32, 48),
     DEFAULT: fluid(48, 64),
