@@ -1,5 +1,4 @@
 <script setup>
-// import '@unocss/reset/tailwind-compat.css'
 import '~/assets/styles/global.css'
 
 useHead({
@@ -10,10 +9,10 @@ useHead({
 </script>
 
 <template>
-  <div class="relative min-h-100vh">
+  <div class="relative z-0" id="app">
     <SiteHeader />
-    <NuxtPage />
-    <SiteFooter class="sticky top-100vh" />
+    <NuxtPage></NuxtPage>
+    <SiteFooter />
   </div>
 </template>
 

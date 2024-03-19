@@ -38,7 +38,9 @@ const siteStore = useSiteStore()
 
     <!-- lt-xxl: コピーライトとロゴ -->
     <div class="grid gap-xs justify-items-center" xxl="!justify-items-end">
-      <img src="/img/logo.svg" class="w-127px-133px" alt="" />
+      <NuxtLink to="/"
+        ><img src="/img/logo.svg" class="w-127px-133px" alt=""
+      /></NuxtLink>
       <small class="text-sm text-ink opacity-50"
         >© Haga Gastrointestinal Medical Clinic.</small
       >

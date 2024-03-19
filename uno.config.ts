@@ -110,11 +110,13 @@ export default defineConfig<Theme>({
             --uno: text-md text-ink;
             background: rgb(0 0 0 / 4%);
             line-height: 1.8;
+            font-family: "Zen Kaku Gothic New", sans-serif;
+          }
+          #app {
             overflow-x: hidden;
             @supports (overflow: clip) {
               overflow-x: clip;
             }
-            font-family: "Zen Kaku Gothic New", sans-serif;
           }
           img {
             width: 100%;
@@ -122,6 +124,7 @@ export default defineConfig<Theme>({
           .ktc .ktc {
             width: 100%;
           }
+
 
         `,
       layer: 'base',
@@ -209,7 +212,10 @@ export default defineConfig<Theme>({
     presetWebFonts({
       provider: 'google', // default provider
       fonts: {
-        ja: 'Zen Kaku Gothic New',
+        ja: {
+          name: 'Zen Kaku Gothic New',
+          weights: ['400', '500', '700'],
+        },
       },
     }),
     // presetTypography(),

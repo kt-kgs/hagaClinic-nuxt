@@ -27,65 +27,70 @@ const siteStore = useSiteStore()
     </div>
 
     <!-- Mobile -->
-    <div class="lg:hidden">
-      <!-- Mobile Button -->
-      <a
-        href="#"
-        class="size-48px bg-white grid place-items-center rounded-full fixed z-101 right-container-pad top-[fluid(16,24)]"
-        @click="siteStore.toggleSpGNav"
-      >
-        <svg
-          viewBox="0 0 100 100"
-          size="50%"
-          :class="{ hidden: siteStore.isSpGNavShow }"
+    <Teleport to="#teleports">
+      <div class="z-100 absolute">
+        <!-- Mobile Button -->
+        <a
+          href="#"
+          class="size-48px bg-white grid place-items-center rounded-full fixed z-101 right-container-pad top-[fluid(16,24)]"
+          lg="hidden"
+          @click="siteStore.isSpGNavShow = !siteStore.isSpGNavShow"
         >
-          <g class="stroke-5 stroke-primary">
-            <line x1="3" x2="97" y1="20" y2="20" />
-            <line x1="3" x2="97" y1="50" y2="50" />
-            <line x1="3" x2="97" y1="80" y2="80" />
-          </g>
-        </svg>
-        <svg
-          viewBox="0 0 100 100"
-          size="50%"
-          :class="{ hidden: !siteStore.isSpGNavShow }"
-        >
-          <g class="stroke-5 stroke-primary">
-            <line x1="3" x2="97" y1="20" y2="80" />
-            <!-- <line x1="3" x2="97" y1="50" y2="50" /> -->
-            <line x1="3" x2="97" y1="80" y2="20" />
-          </g>
-        </svg>
-      </a>
+          <svg
+            viewBox="0 0 100 100"
+            size="50%"
+            :class="{ hidden: siteStore.isSpGNavShow }"
+          >
+            <g class="stroke-5 stroke-primary">
+              <line x1="3" x2="97" y1="20" y2="20" />
+              <line x1="3" x2="97" y1="50" y2="50" />
+              <line x1="3" x2="97" y1="80" y2="80" />
+            </g>
+          </svg>
+          <svg
+            viewBox="0 0 100 100"
+            size="50%"
+            :class="{ hidden: !siteStore.isSpGNavShow }"
+          >
+            <g class="stroke-5 stroke-primary">
+              <line x1="3" x2="97" y1="20" y2="80" />
+              <!-- <line x1="3" x2="97" y1="50" y2="50" /> -->
+              <line x1="3" x2="97" y1="80" y2="20" />
+            </g>
+          </svg>
+        </a>
 
-      <!-- Mobile Modal Nav -->
-      <nav
-        class="fixed bg-primary inset-0 p-container-pad z-100 text-ink-inv"
-        :class="{ hidden: !siteStore.isSpGNavShow }"
-      >
-        <ul class="flex flex-col gap-lg mt-96px">
-          <li v-for="nav in siteStore.navs.global" class="text-right">
-            <NuxtLink
-              :to="nav.href"
-              class="text-lg text-disp"
-              @click="siteStore.isSpGNavShow = false"
-            >
-              {{ nav.label }}
-            </NuxtLink>
-          </li>
-        </ul>
-        <div class="bottom-container-pad absolute flex flex-col gap-lg">
-          <img src="/img/sitting-parent-child.png" alt="" class="w-150px" />
-          <img src="/img/logo-white.svg" alt="" class="w-150px" />
-          <a class="text-disp"><small>TEL: </small>023-624-8686</a>
-        </div>
-        <p
-          class="write-vertical-right text-xs absolute top-container-pad left-container-pad"
+        <!-- Mobile Modal Nav -->
+        <nav
+          class="fixed bg-primary inset-0 p-container-pad text-ink-inv"
+          v-if="siteStore.isSpGNavShow"
         >
-          山形県山形市 消化器専門 クリニック
-        </p>
-      </nav>
-    </div>
+          <ul class="flex flex-col gap-lg mt-96px">
+            <li v-for="nav in siteStore.navs.global" class="text-right">
+              <NuxtLink
+                :to="nav.href"
+                class="text-lg text-disp"
+                @click="siteStore.isSpGNavShow = false"
+              >
+                {{ nav.label }}
+              </NuxtLink>
+            </li>
+          </ul>
+          <div class="bottom-container-pad absolute flex flex-col gap-lg">
+            <img src="/img/sitting-parent-child.png" alt="" class="w-150px" />
+            <NuxtLink @click="siteStore.isSpGNavShow = false" to="/"
+              ><img src="/img/logo-white.svg" alt="" class="w-150px"
+            /></NuxtLink>
+            <a class="text-disp"><small>TEL: </small>023-624-8686</a>
+          </div>
+          <p
+            class="write-vertical-right text-xs absolute top-container-pad left-container-pad"
+          >
+            山形県山形市 消化器専門 クリニック
+          </p>
+        </nav>
+      </div>
+    </Teleport>
   </header>
 </template>
 

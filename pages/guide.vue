@@ -1,8 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  layout: 'page',
+})
+</script>
 
 <template>
   <PageLayout>
-    <PageHeader />
     <PageMain>
       <PageSection title="診療時間">
         <img src="/img/opening-hours.svg" alt="" class="max-w-700px" />
@@ -10,7 +13,10 @@
       <PageSection title="アクセス">
         <div class="flex flex-wrap justify-between">
           <p class="wbrs">〒990-0025 山形市あこや町2-15-1</p>
-          <a href="#" class="flex gap-0.25em items-center text-xs text-black/80"
+          <a
+            href="https://maps.app.goo.gl/umd2gmZd8ZoFeTw69"
+            target="_blank"
+            class="flex gap-0.25em items-center text-xs text-black/80"
             ><span class="i-mdi:chevron-right text-primary"></span>Google
             Mapで見る</a
           >

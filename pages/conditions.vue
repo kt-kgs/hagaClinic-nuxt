@@ -1,8 +1,13 @@
 <script setup lang="ts"></script>
 
 <template>
-  <PageLayout>
-    <PageHeader />
+  <PageLayout :toc="['症状から探す', '']">
+    <PageHeader
+      title="タイトルタイトルタイトルタイトル"
+      img="/img/conditions/page-header.jpg"
+    >
+      <p>テキストテキストテキストテキストテキストテキストテキスト</p>
+    </PageHeader>
     <PageMain>
       <PageSection title="症状から探す">
         <ul class="grid gap-box-lg">

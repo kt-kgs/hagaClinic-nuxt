@@ -1,8 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  layout: 'page',
+})
+</script>
 
 <template>
   <PageLayout>
-    <!-- <PageHeader></PageHeader> -->
     <PageMain>
       <PageSection title="">
         <ul class="grid gap-box">

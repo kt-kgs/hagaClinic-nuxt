@@ -2,19 +2,20 @@
 const props = defineProps<{
   href?: string
   label?: string
+  to?: string
 }>()
 </script>
 
 <template>
-  <a
-    href="#"
+  <NuxtLink
+    :to="to"
     class="border-(ink 1px) px-box gap-md flex items-center rounded-full py-6 w-fit"
   >
     {{ label || 'label' }}
     <span
       class="i-mdi:chevron-right text-1.25em text-primary inline-block"
     ></span>
-  </a>
+  </NuxtLink>
 </template>
 
 <style scoped lang="scss"></style>

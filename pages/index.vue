@@ -4,8 +4,8 @@ const route = useRoute()
 
 <template>
   <!-- Intro -->
-  <main class="pb-sect">
-    <section class="grid gap-box-lg" lg="grid-cols-[4fr_6fr] mt-box-lg">
+  <PageMain>
+    <section class="grid gap-box-lg" lg="grid-cols-[4fr_6fr]">
       <!-- figureArea -->
       <div class="">
         <img
@@ -26,17 +26,19 @@ const route = useRoute()
         class="ktc gap-lg grid"
         lg="order--1 self-center justify-self-end mx-none"
       >
-        <h2 class="text-center text-disp-lg font-500 wbrs">
-          「痛みの少ない医療」を<br />お届けします
+        <h2 class="text-center text-disp-lg font-400 wbrs">
+          高い専門性と安心・快適な医療をお届けします。
         </h2>
         <p class="text-center wbrs">
-          胃内視鏡検査・大腸内視鏡検査は、楽で快適に検査および処置が受けられるよう配慮しております。
+          質の高い医療、苦痛に配慮した内視鏡検査を提供し、
+          地域の皆様１人１人の健康をサポートします。
         </p>
-        <BtnBase label="当院について詳しく" class="mx-auto" />
+        <BtnBase label="当院について詳しく" class="mx-auto" to="/about/" />
       </div>
     </section>
+
     <!-- News Section -->
-    <section class="mt-sect grid gap-box-lg ktcs" lg="grid-cols-2 ktc">
+    <section class="grid gap-box-lg ktc" lg="grid-cols-2">
       <figure class="-ml-container-pad w-80%" lg="ml-0 w-full">
         <img
           src="/img/top/news-01.jpg"
@@ -55,7 +57,7 @@ const route = useRoute()
         <ul class="">
           <li v-for="(v, i) in 4" class="">
             <NuxtLink
-              href="#"
+              to="/news/test"
               class="grid grid-cols-[auto_1fr_auto] gap-md items-center py-md border-b-1px"
             >
               <div class="col-span-2" md="contents">
@@ -68,12 +70,13 @@ const route = useRoute()
         </ul>
       </div>
     </section>
+
     <!-- Showcase Section -->
-    <section class="mt-sect ktcs @container">
+    <section class="ktc @container">
       <h2 class="sr-only">おすすめリンク</h2>
       <ShowCaseList />
     </section>
-  </main>
+  </PageMain>
 </template>
 
 <style scoped></style>
