@@ -14,9 +14,9 @@ const siteStore = useSiteStore()
         xxl="gap-y-sm justify-end"
       >
         <li v-for="nav in siteStore.navs.global">
-          <a :href="nav.href" class="text-md whitespace-nowrap">{{
+          <NuxtLink :to="nav.href" class="text-md whitespace-nowrap">{{
             nav.label
-          }}</a>
+          }}</NuxtLink>
         </li>
       </ul>
     </div>

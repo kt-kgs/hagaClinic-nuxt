@@ -12,6 +12,9 @@ export default defineNuxtConfig({
       // './utils/ktPostcss.ts': {},
     },
   },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+  },
   content: {
     markdown: {
       anchorLinks: false,
