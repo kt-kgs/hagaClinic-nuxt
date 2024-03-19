@@ -5,12 +5,14 @@ const route = useRoute()
 <template>
   <nav
     class="grid gap-lg py-box"
-    lg="py-none sticky top-box grid-col-start-1 row-span-2 grid content-start px-20% gap-sm gap-y-box"
+    lg="py-none sticky top-box self-start grid-col-start-1 row-span-2 grid content-start px-20% gap-sm gap-y-box"
   >
     <div class="" lg="">
-      <h2 class="text-disp text-center" lg="text-left">
-        {{ route.meta.title }}
-      </h2>
+      <a href="#">
+        <h2 class="text-disp text-center" lg="text-left">
+          {{ route.meta.title }}
+        </h2>
+      </a>
     </div>
     <ul
       class="flex flex-wrap gap-x-lg gap-y-sm justify-center"
