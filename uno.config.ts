@@ -88,6 +88,9 @@ const fontSize = new KtUnoCssVar('fz', {
 })
 
 export default defineConfig<Theme>({
+  content: {
+    filesystem: ['content/**/*.md'],
+  },
   preflights: [
     {
       getCSS: (arg) => /*css*/ `

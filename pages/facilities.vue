@@ -130,7 +130,9 @@ definePageMeta({
               title="血圧脈波検査装置"
               subTitle="フクダ電子 Vasera vs-2000 "
               img="/img/facilities/equipment-03.jpg"
-            >
+              ><p>
+                血管年齢を測定し、血管の詰まりや動脈硬化の程度を評価します。
+              </p>
             </EquipmentItem>
           </li>
           <li>
@@ -139,6 +141,7 @@ definePageMeta({
               subTitle="フクダ電子 cardimax3 FCP-8300"
               img="/img/facilities/equipment-04.jpg"
             >
+              <p>不整脈や狭心症など、心臓の異常がないかを調べます。</p>
             </EquipmentItem>
           </li>
         </ul>
