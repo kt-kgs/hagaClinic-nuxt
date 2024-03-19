@@ -1,8 +1,24 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  title: '検査と設備',
+  toc: ['当院で行える検査', '検査の流れ', '設備の紹介'],
+})
+</script>
 
 <template>
-  <PageLayout :toc="['当院で行える検査', '検査の流れ', '設備の紹介']">
-    <PageHeader img="/img/facilities/page-header.jpg" title=""></PageHeader>
+  <PageLayout>
+    <PageHeader
+      img="/img/facilities/page-header.jpg"
+      title="できるだけ早く受診することが、「安心」できる一番の方法です。"
+    >
+      <p>
+        昔から日本人は我慢強いと言われてきました。
+        しかし、体の不調がある際には病気が隠れていたり、放置すると危険なこともあります。
+        何か症状がある場合には我慢せずに、早めに医療機関を受診することをお勧めします。
+        診察や検査を受け、健康状態を確認することで安心につながります。
+      </p>
+    </PageHeader>
+
     <PageMain>
       <PageSection title="当院で行える検査">
         <ul class="grid gap-box">
@@ -39,39 +55,8 @@
             </Inspection>
           </li>
         </ul>
-
-        <!-- 検査にまつわるその他ポイント -->
-        <!-- <ul class="grid gap-box" lg="grid-cols-3">
-          <li>
-            <article class="grid">
-              <h2 class="text-disp-sm border-b border-primary py-md">
-                鎮静剤の使用
-              </h2>
-              <div class="py-lg">
-                <p>
-                  患者様一人一人の状態に合わせて鎮静剤の量を調整し、ウトウト眠っている状態で検査を受けることが可能です。これまで胃カメラ検査で辛い思いをされた方でも嘔吐反射や腹痛が少なく、安心して検査を受けていただけます。
-                  検査終了後30〜60分程度プライバシーに配慮したリカバリーベッドで休んでから帰っていただきます。なお、検査当日はご自身での運転（車・バイク・自転車）ができませんのでご注意ください。
-                </p>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="grid">
-              <h2 class="text-disp-sm border-b border-primary py-md">
-                胃カメラ検査をお勧めしたい方
-              </h2>
-              <div class="py-lg">
-                <p>
-                  胃痛、胃もたれ、胸やけ、喉の違和感、吐き気、食欲低下、体重減少、貧血、黒い便などの症状のある方。
-                  人間ドックや検診で異常を指摘された方。
-                  ピロリ菌が陽性になったことがある方。
-                  アルコールをよく飲む、喫煙する方。
-                </p>
-              </div>
-            </article>
-          </li>
-        </ul> -->
       </PageSection>
+
       <PageSection title="検査の流れ">
         <ul class="grid gap-lg">
           <li>
@@ -117,50 +102,68 @@
       </PageSection>
 
       <PageSection title="設備の紹介">
-        <ul
-          class="grid gap-box grid-cols-[repeat(auto-fill,minmax(400px,1fr))]"
-        >
+        <ul class="grid gap-box grid-cols-2">
           <li>
             <EquipmentItem
-              title="感染症診察室"
+              title="内視鏡システム"
+              subTitle="オリンパス EVIS X1 "
               img="/img/facilities/equipment-01.jpg"
             >
               <p>
-                風邪症状の方専用の診察室を2024年に新設しました。夏や冬でも室内でお待ちいただけます。
+                胃カメラ・大腸カメラ共に拡大観察が可能であり、精度の高い観察・診断が可能です。
               </p>
             </EquipmentItem>
           </li>
           <li>
             <EquipmentItem
-              title="デジタルX線テレビシステム"
+              title="エコーシステム"
+              subTitle="GE LOGIQ S7 Expert"
               img="/img/facilities/equipment-02.jpg"
             >
               <p>
-                当院は透視室を備えており、レントゲン検査だけでなく、リアルタイムでの動画撮影が可能で、詳細な大腸透視や胃透視検査を受けていただけます。
+                腹部のルーチン検査から血管や表在検査まで 幅広い検査が可能です。
               </p>
             </EquipmentItem>
           </li>
           <li>
             <EquipmentItem
-              title="リカバリーベッド"
+              title="血圧脈波検査装置"
+              subTitle="フクダ電子 Vasera vs-2000 "
               img="/img/facilities/equipment-03.jpg"
             >
-              <p>
-                内視鏡で鎮静剤を使用した方や、具合が悪い患者様が休んで頂けるように、プライバシーに配慮したベッドを複数用意しています。
-              </p>
             </EquipmentItem>
           </li>
           <li>
             <EquipmentItem
-              title="完全バリアフリー"
+              title="心電図"
+              subTitle="フクダ電子 cardimax3 FCP-8300"
               img="/img/facilities/equipment-04.jpg"
             >
-              <p>
-                車椅子の方でもストレスなく通院していただけるように配慮しております。
-              </p>
             </EquipmentItem>
           </li>
         </ul>
+
+        <div class="prose p-lg border border-black/20 rounded">
+          <h3 class="text-disp">その他の設備</h3>
+          <p>
+            感染症診察室：<br />風邪症状の方専用の診察室を 2024
+            年に新設しました。夏 や冬でも室内でお待ちいただけます。
+          </p>
+          <p>
+            デジタルX 線テレビシステム：<br />当院は透視室を備えており、レントゲン検
+            査だけでなく、リアルタイムでの動画撮影が可能で、詳細な大腸透視や胃
+            透視検査も受けていただけます。
+          </p>
+          <p>
+            リカバリーベッド：<br />内視鏡で鎮静剤を使用した方や、具合が悪い患者様が
+            休んで頂けるように、プライバシーに配慮したベッドを複数用意していま
+            す。
+          </p>
+          <p>
+            完全バリアフリー：<br />車椅子の方でもストレスなく通院していただけるよう
+            に配慮しております。
+          </p>
+        </div>
       </PageSection>
     </PageMain>
   </PageLayout>

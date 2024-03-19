@@ -1,7 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  title: '症状から探す',
+  toc: ['症状から探す'],
+})
+</script>
 
 <template>
-  <PageLayout :toc="['症状から探す', '']">
+  <PageLayout>
     <PageHeader
       title="タイトルタイトルタイトルタイトル"
       img="/img/conditions/page-header.jpg"

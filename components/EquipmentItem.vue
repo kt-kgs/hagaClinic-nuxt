@@ -2,11 +2,11 @@
 const props = defineProps<{
   img?: string
   title: string
+  subTitle: string
 }>()
 </script>
 
 <template>
-  <!-- Box -->
   <article class="grid gap-lg">
     <img
       :src="img ?? `/img/noImage.png`"
@@ -14,7 +14,10 @@ const props = defineProps<{
       alt=""
     />
 
-    <h3 class="text-disp-sm">{{ title }}</h3>
+    <div class="grid">
+      <h3 class="text-disp-sm">{{ title }}</h3>
+      <p class="text-sm opacity-75">{{ subTitle }}</p>
+    </div>
     <div class="text-sm">
       <slot></slot>
     </div>

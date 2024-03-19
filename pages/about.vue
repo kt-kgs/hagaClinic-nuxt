@@ -1,7 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  title: '当院について',
+  description: '当院の診療案内ページです。',
+  toc: ['3つの特色', '医師の紹介', '院内の風景'],
+})
+</script>
 
 <template>
-  <PageLayout :toc="['3つの特色', '医師の紹介', '院内の風景']">
+  <PageLayout>
     <PageHeader
       img="/img/about/page-header.jpg"
       title="ここにタイトルここにタイトル"

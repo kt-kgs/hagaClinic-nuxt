@@ -1,11 +1,12 @@
 <script setup lang="ts">
 definePageMeta({
+  title: 'お知らせ',
   layout: 'page',
 })
 </script>
 
 <template>
-  <PageLayout>
+  <PageLayout :toc="[]" title="お知らせ">
     <PageMain>
       <div class="grid gap-box-sm pb-sect">
         <header class="grid gap-lg">

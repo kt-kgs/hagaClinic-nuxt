@@ -5,7 +5,7 @@ definePageMeta({
 </script>
 
 <template>
-  <PageLayout>
+  <PageLayout :toc="[]" title="お知らせ">
     <PageMain>
       <PageSection title="">
         <ul class="grid gap-box">

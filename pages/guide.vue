@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: 'page',
+  title: '診療案内',
+  toc: ['診療時間', 'アクセス', '予約と問診'],
 })
 </script>
 

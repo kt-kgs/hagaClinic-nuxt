@@ -1,12 +1,8 @@
-<script setup lang="ts">
-const props = defineProps<{
-  toc?: string[]
-}>()
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="ktc grid gap-x-box" lg="grid-cols-[4fr_8fr]">
-    <PageLocalNav :list="toc ?? []" />
+    <PageLocalNav />
     <div class="grid gap-sect">
       <slot></slot>
     </div>
