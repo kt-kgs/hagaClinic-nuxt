@@ -3,7 +3,7 @@
 <template>
   <ul class="grid gap-box-lg">
     <ContentList path="/conditions" v-slot="{ list }">
-      <li v-for="post in list">
+      <li v-for="post in list" :id="`page-sect-${post.title}`">
         <article class="grid gap-lg @container" :id="post.title">
           <header class="grid grid-cols-[auto_1fr] items-center gap-md">
             <h3 class="text-disp">{{ post.title }}</h3>

@@ -3,7 +3,6 @@ const route = useRoute()
 </script>
 
 <template>
-  <!-- Intro -->
   <PageMain>
     <section class="grid gap-box-lg" lg="grid-cols-[4fr_6fr]">
       <!-- figureArea -->

@@ -1,16 +1,60 @@
 <script setup lang="ts">
-const route = useRoute()
+const props = defineProps<{
+  title: string
+  list: string[]
+}>()
+const active = defineModel('active', { default: 0 })
+
+let observer: IntersectionObserver
+const targetMap = new Map()
+
+onMounted(() => {
+  props.list.forEach((item, i) => {
+    const target = document.getElementById(`page-sect-${item}`)
+
+    targetMap.set(target, {
+      index: i,
+      label: item,
+    })
+  })
+
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, i) => {
+        if (!entry.isIntersecting) return
+        active.value = targetMap.get(entry.target).index
+      })
+    },
+    {
+      root: null,
+      rootMargin: '-20% 0px -80%',
+      threshold: 0,
+    }
+  )
+
+  props.list.forEach((item, i) => {
+    const target = document.getElementById(`page-sect-${item}`)
+
+    if (!target || !observer) return
+
+    observer.observe(target)
+  })
+
+  onUnmounted(() => {
+    observer.disconnect()
+  })
+})
 </script>
 
 <template>
   <nav
     class="grid gap-lg py-box"
-    lg="py-none sticky top-box self-start grid-col-start-1 row-span-2 grid content-start px-20% gap-sm gap-y-box"
+    lg="py-none self-start grid-col-start-1 row-span-2 grid content-start px-20% gap-sm gap-y-box"
   >
     <div class="" lg="">
       <a href="#">
         <h2 class="text-disp text-center" lg="text-left">
-          {{ route.meta.title }}
+          {{ title }}
         </h2>
       </a>
     </div>
@@ -18,14 +62,16 @@ const route = useRoute()
       class="flex flex-wrap gap-x-lg gap-y-sm justify-center"
       lg="grid justify-start"
     >
-      <li v-for="(tocItem, i) in route.meta.toc" class="relative">
+      <li v-for="(item, i) in list" class="relative">
+        <!-- symbol -->
         <span
           lt-lg="hidden"
-          :class="{ 'opacity-0': i !== 0 }"
-          class="i-custom:symbol color-primary text-0.75em mr-0.5em"
+          class="i-custom:symbol color-primary text-0.75em mr-0.5em -mt-0.2em opacity-0"
+          :class="{ 'opacity-100': active === i }"
         ></span>
-        <NuxtLink :to="'#' + tocItem" class="text-sm">
-          {{ tocItem }}
+
+        <NuxtLink :to="`#${`page-sect-${item}`}`" class="text-sm">
+          {{ item }}
         </NuxtLink>
       </li>
     </ul>

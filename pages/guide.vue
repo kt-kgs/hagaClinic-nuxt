@@ -1,12 +1,13 @@
-<script setup lang="ts">
-definePageMeta({
-  title: '診療案内',
-  toc: ['診療時間', 'アクセス', '予約と問診'],
-})
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <PageLayout>
+    <template #side>
+      <PageLocalNav
+        title="当院について"
+        :list="['診療時間', 'アクセス', '予約と問診']"
+      ></PageLocalNav>
+    </template>
     <PageMain>
       <PageSection title="診療時間">
         <img src="/img/opening-hours.svg" alt="" class="max-w-700px" />

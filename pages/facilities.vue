@@ -7,6 +7,13 @@ definePageMeta({
 
 <template>
   <PageLayout>
+    <template #side>
+      <PageLocalNav
+        title="当院について"
+        :list="['当院で行える検査', '設備の紹介']"
+      ></PageLocalNav>
+    </template>
+
     <PageHeader
       img="/img/facilities/page-header.jpg"
       title="できるだけ早く受診することが、「安心」できる一番の方法です。"
