@@ -20,4 +20,16 @@ export default defineNuxtConfig({
       anchorLinks: false,
     },
   },
+  // imports: {
+  //   presets: [
+  //     {
+  //       from: 'gsap/all',
+  //       imports: ['ScrollTrigger', ]
+  //     },
+  //     {
+  //       from: 'gsap',
+  //       imports: ['gsap'],
+  //     }
+  //   ]
+  // }
 })

@@ -1,40 +1,8 @@
-<script setup lang="ts">
-const route = useRoute()
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <PageMain>
-    <section class="grid gap-box-lg" lg="grid-cols-[4fr_6fr]">
-      <!-- figureArea -->
-      <div class="">
-        <img
-          src="/img/top/hero-01.jpg"
-          class="aspect-16/9 rounded object-cover"
-          alt=""
-        />
-        <figure class="-mr-container-pad mt--10% w-60% ml-auto">
-          <img
-            src="/img/top/hero-02.jpg"
-            class="aspect-16/9 rounded object-cover"
-            alt=""
-          />
-        </figure>
-      </div>
-      <!-- descArea -->
-      <div
-        class="ktc gap-lg grid"
-        lg="order--1 self-center justify-self-end mx-none"
-      >
-        <h2 class="text-center text-disp-lg font-400 wbrs">
-          高い専門性と安心・快適な医療をお届けします。
-        </h2>
-        <p class="text-center wbrs">
-          質の高い医療、苦痛に配慮した内視鏡検査を提供し、
-          地域の皆様１人１人の健康をサポートします。
-        </p>
-        <BtnBase label="当院について詳しく" class="mx-auto" to="/about/" />
-      </div>
-    </section>
+    <SectTopIntro />
 
     <!-- News Section -->
     <section class="grid gap-box-lg ktc" lg="grid-cols-2">
