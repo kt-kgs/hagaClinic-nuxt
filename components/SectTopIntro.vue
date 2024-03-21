@@ -3,47 +3,43 @@ const lgImgs = ref<HTMLElement[]>([])
 const smImgs = ref<HTMLElement[]>([])
 
 onMounted(() => {
-  SwipeRegister(lgImgs.value, { delay: 0 })
-  SwipeRegister(smImgs.value, { delay: 500 })
+  setupAnim(lgImgs.value)
+  setupAnim(smImgs.value, { delay: 500 })
 })
 
-const tls = ref<gsap.core.Timeline[]>([])
+let ctx: gsap.Context
 
-function SwipeRegister(
-  targets: HTMLElement[],
-  opts?: {
-    delay: number
-  }
-) {
-  const getTarget = gsap.utils.wrap(targets)
-  let cur = 0
+function setupAnim(targets: HTMLElement[], opts?: { delay?: number }) {
+  ctx = gsap.context(() => {
+    const getTarget = gsap.utils.wrap(targets)
+    let cur = 0
 
-  function swipe() {
-    const curSlide = getTarget(cur)
-    const nextSlide = getTarget(cur + 1)
+    function swipe() {
+      const curSlide = getTarget(cur)
+      const nextSlide = getTarget(cur + 1)
 
-    gsap.set(targets, { zIndex: 0, scale: 1, opacity: 1 })
-    gsap.set(curSlide, { zIndex: 2 })
-    gsap.set(nextSlide, { zIndex: 1 })
+      if (!curSlide || !nextSlide) return
 
-    const _tl = gsap
-      .timeline()
-      .to(curSlide, { opacity: 0, duration: 1.5, scale: 1.1 })
-      .delay(3)
-      .call(() => {
-        cur++
-        swipe()
-      })
-
-    tls.value.push(_tl)
-  }
-  setTimeout(() => {
-    swipe()
-  }, opts?.delay || 0)
+      gsap
+        .timeline()
+        .set(targets, { zIndex: 0, scale: 1, opacity: 1 })
+        .set(curSlide, { zIndex: 2 })
+        .set(nextSlide, { zIndex: 1 })
+        .to(curSlide, { opacity: 0, duration: 1.5, scale: 1.1 })
+        .delay(3)
+        .eventCallback('onComplete', () => {
+          cur++
+          swipe()
+        })
+    }
+    setTimeout(() => {
+      swipe()
+    }, opts?.delay)
+  })
 }
 
 onUnmounted(() => {
-  tls.value.forEach((tl) => tl.kill())
+  ctx.revert()
 })
 </script>
 
@@ -84,13 +80,15 @@ onUnmounted(() => {
       lg="order--1 self-center justify-self-end mx-none"
     >
       <h2 class="text-center text-disp-lg font-400 wbrs">
-        高い専門性と安心・快適な医療をお届けします。
+        高い専門性と<wbr />安心・快適な医療を<wbr />お届けします。
       </h2>
       <p class="text-center wbrs">
-        質の高い医療、苦痛に配慮した内視鏡検査を提供し、
-        地域の皆様１人１人の健康をサポートします。
+        質の高い医療、<wbr />苦痛に配慮した<wbr />内視鏡検査を提供し、
+        地域の皆様<wbr />１人１人の健康を<wbr />サポートします。
       </p>
-      <BtnBase label="当院について詳しく" class="mx-auto" to="/about/" />
+      <BtnBase class="mx-auto wbrs" to="/about/"
+        >当院について<wbr />詳しく</BtnBase
+      >
     </div>
   </section>
 </template>

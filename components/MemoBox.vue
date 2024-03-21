@@ -16,7 +16,7 @@ const cssColorText = `var(--c-${props.color}-text)`
     <p class="text-md pb-sm" :class="`color-${color}-text`">
       {{ title }}
     </p>
-    <div class="content text-xs">
+    <div class="content text-sm">
       <slot></slot>
     </div>
   </div>

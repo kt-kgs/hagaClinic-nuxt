@@ -83,7 +83,7 @@ const fontSize = new KtUnoCssVar('fz', {
   disp: {
     sm: fluid(22, 26),
     DEFAULT: fluid(24, 32),
-    lg: fluid(32, 48),
+    lg: fluid(28, 40),
   },
 })
 
@@ -155,9 +155,10 @@ export default defineConfig<Theme>({
     [
       /^wbrs$/,
       (m) => ({
-        // 'word-break': 'keep-all',
-        'word-break': 'auto-phrase',
-        'overflow-wrap': 'anywhere',
+        'word-break': 'keep-all',
+        'overflow-wrap': 'break-word',
+        // 'word-break': 'auto-phrase',
+        // 'overflow-wrap': 'anywhere',
       }),
     ],
     // [/^break-phrase$/, (m) => ({ 'word-break': 'auto-phrase' })],

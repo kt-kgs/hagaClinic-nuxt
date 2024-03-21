@@ -4,6 +4,12 @@ export const useSiteStore = defineStore('site', () => {
   function toggleSpGNav() {
     isSpGNavShow.value = !isSpGNavShow.value
   }
+  function hideSpGNav() {
+    isSpGNavShow.value = false
+  }
+  function showSpGNav() {
+    isSpGNavShow.value = true
+  }
 
   const navs = ref({
     global: [
@@ -15,5 +21,5 @@ export const useSiteStore = defineStore('site', () => {
     ],
   })
 
-  return { isSpGNavShow, toggleSpGNav, navs }
+  return { isSpGNavShow, toggleSpGNav, hideSpGNav, showSpGNav, navs }
 })

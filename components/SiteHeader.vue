@@ -17,9 +17,15 @@ const siteStore = useSiteStore()
       >
         <ul class="gap-lg flex">
           <li v-for="nav in siteStore.navs.global" :key="nav.label">
-            <NuxtLink :to="nav.href" class="text-lg whitespace-nowrap">{{
-              nav.label
-            }}</NuxtLink>
+            <NuxtLink
+              :to="nav.href"
+              class="text-lg whitespace-nowrap py-sm block relative"
+            >
+              {{ nav.label }}
+              <span
+                class="w-0 h-2px bg-primary opacity-0 block absolute bottom-0 [.router-link-active>&]:(opacity-100 w-full) duration-200"
+              ></span>
+            </NuxtLink>
           </li>
         </ul>
         <p class="text-sm font-400">TEL: 023-624-8686</p>
@@ -28,13 +34,13 @@ const siteStore = useSiteStore()
 
     <!-- Mobile -->
     <Teleport to="#teleports">
-      <div class="z-100 absolute">
+      <div class="z-100 absolute" v-if="siteStore">
         <!-- Mobile Button -->
         <a
           href="#"
           class="size-48px bg-white grid place-items-center rounded-full fixed z-101 right-container-pad top-[fluid(16,24)]"
           lg="hidden"
-          @click="siteStore.isSpGNavShow = !siteStore.isSpGNavShow"
+          @click="siteStore.toggleSpGNav()"
         >
           <svg
             viewBox="0 0 100 100"

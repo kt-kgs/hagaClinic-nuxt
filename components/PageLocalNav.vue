@@ -62,12 +62,14 @@ onMounted(() => {
       class="flex flex-wrap gap-x-lg gap-y-sm justify-center"
       lg="grid justify-start"
     >
-      <li v-for="(item, i) in list" class="relative">
-        <!-- symbol -->
+      <li
+        v-for="(item, i) in list"
+        class="relative group"
+        :class="{ active: active === i }"
+      >
         <span
           lt-lg="hidden"
-          class="i-custom:symbol color-primary text-0.75em mr-0.5em -mt-0.2em opacity-0"
-          :class="{ 'opacity-100': active === i }"
+          class="i-custom:symbol color-primary text-1em mr-0.25em -mt-0.2em opacity-0 duration-200 scale-75 group-[.active]:(scale-100 opacity-100)"
         ></span>
 
         <NuxtLink :to="`#${`page-sect-${item}`}`" class="text-sm">

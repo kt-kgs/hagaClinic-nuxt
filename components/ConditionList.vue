@@ -9,7 +9,7 @@
             <h3 class="text-disp">{{ post.title }}</h3>
             <span class="h-px bg-black/20"></span>
           </header>
-          <ContentRenderer :value="post" class="prose text-sm" />
+          <ContentRenderer :value="post" class="prose" />
           <div class="grid gap-sm">
             <MemoBox title="具体的な症状" color="primary">
               <ul>
@@ -17,7 +17,9 @@
               </ul>
             </MemoBox>
             <div class="grid grid-cols-[1fr_auto] gap-md items-center text-xs">
-              <p class="wbrs">以上の症状ある方は、すぐに当院にご相談ください</p>
+              <p class="wbrs">
+                以上の症状がある方は、<wbr />すぐに当院に<wbr />ご相談ください
+              </p>
               <NuxtLink class="text-primary-text">
                 <span class="i-mdi:chevron-right"></span>
                 問い合わせる
