@@ -5,7 +5,7 @@ const siteStore = useSiteStore()
 <template>
   <footer
     class="px-container-pad py-box flex flex-col items-center gap-box-sm border-t-1px border-black/10"
-    xxl="grid grid-cols-[repeat(3,1fr)] grid-rows-[auto_auto] gap-y-sm items-start"
+    xxl="grid grid-cols-[repeat(auto_auto_1fr)] grid-rows-[auto_auto] gap-y-sm items-start"
   >
     <!-- ナビ -->
     <div class="" xxl="grid col-start-3">

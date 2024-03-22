@@ -8,10 +8,12 @@
         :list="['診療時間', 'アクセス', '予約と問診']"
       ></PageLocalNav>
     </template>
+
     <PageMain>
       <PageSection title="診療時間">
         <img src="/img/opening-hours.svg" alt="" class="max-w-700px" />
       </PageSection>
+
       <PageSection title="アクセス">
         <div class="flex flex-wrap justify-between">
           <p class="wbrs">〒990-0025 山形市あこや町2-15-1</p>
@@ -33,12 +35,16 @@
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
-        </div> </PageSection
-      ><PageSection title="予約と問診">
+        </div>
+      </PageSection>
+
+      <PageSection title="予約と問診">
         <p class="text-disp-lg">
           <small class="text-0.5em">TEL: </small>023-624-8686
         </p>
-        <div class="bg-white p-box-sm rounded grid gap-lg">
+
+        <!-- 問診BOX -->
+        <div class="bg-white p-box-sm rounded grid gap-lg w-fit">
           <h3 class="text-disp-sm wbrs">
             「WEB 問診」にご協力おねがい致します
           </h3>
@@ -51,9 +57,10 @@
           <a
             href="#"
             class="bg-secondary-text rounded-999px color-ink-inv py-1.5em px-3em w-fit grid gap-0.5em justify-center items-center grid-cols-[auto_auto]"
-            ><span class="i-mdi:clipboard-account text-1.75em"></span>WEB
-            問診はこちらから</a
           >
+            <span class="i-mdi:clipboard-account text-1.75em"></span>
+            WEB問診はこちらから
+          </a>
         </div>
       </PageSection>
     </PageMain>

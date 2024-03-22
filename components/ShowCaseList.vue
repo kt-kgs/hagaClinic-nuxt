@@ -3,6 +3,7 @@ const posts = [
   {
     head: '症状から探す',
     img: '/img/top/showcase-item-01.jpg',
+    href: '/conditions/',
     links: [
       {
         label: '胃腸',
@@ -26,6 +27,7 @@ const posts = [
   {
     head: '検査と設備',
     img: '/img/top/showcase-item-02.jpg',
+    href: '/facilities/',
     links: [
       {
         label: '当院で行える検査',
@@ -40,6 +42,7 @@ const posts = [
   {
     head: '診療案内',
     img: '/img/top/showcase-item-03.jpg',
+    href: '/guide/',
     links: [
       {
         label: '診療時間',
@@ -69,13 +72,22 @@ const posts = [
           <img :src="post.img" alt="" class="blur-4 size-full object-cover" />
           <div class="absolute bg-black/40 z-1 inset-0"></div>
         </div>
-        <h3 class="text-disp lg:min-h-7em" lg="write-vertical-right">
-          {{ post.head }}
-        </h3>
+        <NuxtLink
+          :to="post.href"
+          class="w-fit flex gap-sm items-center lg:min-h-7em"
+          lg="flex-col justify-self-end"
+        >
+          <h3 class="text-disp" lg="write-vertical-right h-fit">
+            {{ post.head }}
+          </h3>
+          <span
+            class="i-mdi:chevron-right text-1.5em mt-0.15em duration-200 [*:hover>&]:translate-x-0.25em"
+          ></span>
+        </NuxtLink>
         <ul class="mt-box grid content-end">
           <li v-for="link in post.links" class="">
             <NuxtLink
-              class="border-b-1px border-ink-inv py-0.5em flex justify-between items-center group"
+              class="border-b-1px border-ink-inv py-sm flex justify-between items-center group"
               :to="link.href"
             >
               <span class="">{{ link.label }}</span>

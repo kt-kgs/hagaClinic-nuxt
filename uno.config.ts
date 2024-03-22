@@ -55,6 +55,7 @@ const spacing = new KtUnoCssVar('s', {
 const color = new KtUnoCssVar('c', {
   ink: {
     DEFAULT: '#434343',
+    text: '#434343',
     light: '#696969',
     inv: 'var(--c-paper)',
   },

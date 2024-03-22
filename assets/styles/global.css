@@ -21,6 +21,10 @@ html {
   /* scroll-behavior: smooth; */
 }
 
+p {
+  max-width: 50em;
+}
+
 body {
   color: var(--c-ink);
   background: rgb(0 0 0 / 4%);

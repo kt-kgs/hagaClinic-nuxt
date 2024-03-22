@@ -49,7 +49,10 @@ const titles = posts.value?.map((post) => post.title)
                   <p class="wbrs">
                     以上の症状がある方は、<wbr />すぐに当院に<wbr />ご相談ください
                   </p>
-                  <NuxtLink class="text-primary-text">
+                  <NuxtLink
+                    to="/guide/#page-sect-予約と問診"
+                    class="text-primary-text"
+                  >
                     <span class="i-mdi:chevron-right"></span>
                     問い合わせる
                   </NuxtLink>
