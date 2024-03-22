@@ -44,9 +44,9 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section class="grid gap-box-lg" lg="grid-cols-[4fr_6fr]">
-    <!-- figureArea -->
-    <div class="">
+  <section class="grid gap-box-lg relative" lg="grid-cols-[4fr_6fr]">
+    <!-- imgsArea -->
+    <div class="relative">
       <ul
         class="children:(absolute top-0) relative aspect-16/9 -z-1 overflow-hidden aspect-16/9 rounded"
       >
@@ -74,9 +74,10 @@ onUnmounted(() => {
         </li>
       </ul>
     </div>
+
     <!-- descArea -->
     <div
-      class="ktc gap-lg grid"
+      class="ktc gap-lg grid relative"
       lg="order--1 self-center justify-self-end mx-none"
     >
       <h2 class="text-center text-disp-lg font-400 wbrs">
@@ -90,6 +91,11 @@ onUnmounted(() => {
         >当院について<wbr />詳しく</BtnBase
       >
     </div>
+    <DecoSymbols class="w-50% inset-[38%_30%_auto_auto]" dir="x"></DecoSymbols>
+    <DecoSymbols
+      class="w-40% inset-[auto_auto_-55%_-13%;]"
+      dir="y"
+    ></DecoSymbols>
   </section>
 </template>
 

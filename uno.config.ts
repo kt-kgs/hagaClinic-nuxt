@@ -54,9 +54,8 @@ const spacing = new KtUnoCssVar('s', {
  */
 const color = new KtUnoCssVar('c', {
   ink: {
-    DEFAULT: '#4A4A4A',
-    text: '#4A4A4A',
-    light: '#4A4A4A',
+    DEFAULT: '#434343',
+    light: '#696969',
     inv: 'var(--c-paper)',
   },
   paper: {
@@ -97,7 +96,6 @@ export default defineConfig<Theme>({
                   ${fs.readFileSync(
                     'node_modules/@unocss/reset/tailwind-compat.css',
                     'utf8'
-                    // readFileSyncはここで直接読み込まないと、unocssの拡張が機能しなくなる
                   )}`,
       layer: 'preflights',
     },
@@ -109,26 +107,6 @@ export default defineConfig<Theme>({
             ${fontSize.toCss()}
             ${container.toCss()}
           }
-          body {
-            --uno: text-md text-ink;
-            background: rgb(0 0 0 / 4%);
-            line-height: 1.8;
-            font-family: "Zen Kaku Gothic New", sans-serif;
-          }
-          #app {
-            overflow-x: hidden;
-            @supports (overflow: clip) {
-              overflow-x: clip;
-            }
-          }
-          img {
-            width: 100%;
-          }
-          .ktc .ktc {
-            width: 100%;
-          }
-
-
         `,
       layer: 'base',
     },

@@ -18,7 +18,31 @@
 } */
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
+}
+
+body {
+  color: var(--c-ink);
+  background: rgb(0 0 0 / 4%);
+  line-height: 1.8;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+* {
+  line-height: calc(10px + 1.2em);
+}
+
+#app {
+  overflow-x: hidden;
+  @supports (overflow: clip) {
+    overflow-x: clip;
+  }
+}
+img {
+  width: 100%;
+}
+.ktc .ktc {
+  width: 100%;
 }
 
 .prose {

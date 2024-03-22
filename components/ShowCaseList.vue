@@ -28,16 +28,12 @@ const posts = [
     img: '/img/top/showcase-item-02.jpg',
     links: [
       {
-        label: '設備1',
-        href: '#',
+        label: '当院で行える検査',
+        href: '/facilities#page-sect-当院で行える検査',
       },
       {
-        label: '設備2',
-        href: '#',
-      },
-      {
-        label: '設備3',
-        href: '#',
+        label: '設備の紹介',
+        href: '/facilities#page-sect-設備の紹介',
       },
     ],
   },
@@ -47,11 +43,15 @@ const posts = [
     links: [
       {
         label: '診療時間',
-        href: '#',
+        href: '/guide#page-sect-診療時間',
       },
       {
         label: 'アクセス',
-        href: '#',
+        href: '/guide#page-sect-アクセス',
+      },
+      {
+        label: '予約と問診',
+        href: '/guide#page-sect-予約と問診',
       },
     ],
   },
@@ -73,12 +73,16 @@ const posts = [
           {{ post.head }}
         </h3>
         <ul class="mt-box grid content-end">
-          <li
-            v-for="link in post.links"
-            class="border-b-(1px ink-inv) gap-sm py-0.5em flex justify-between items-center"
-          >
-            <span class="">{{ link.label }}</span>
-            <span class="i-mdi:chevron-right"></span>
+          <li v-for="link in post.links" class="">
+            <NuxtLink
+              class="border-b-1px border-ink-inv py-0.5em flex justify-between items-center group"
+              :to="link.href"
+            >
+              <span class="">{{ link.label }}</span>
+              <span
+                class="i-mdi:chevron-right group-hover:translate-x-0.25em duration-200"
+              ></span>
+            </NuxtLink>
           </li>
         </ul>
       </article>

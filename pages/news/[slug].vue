@@ -32,11 +32,13 @@ definePageMeta({
             のまたは被、に対して、ます。のないないこと用意「にがての、参考が対応被いに、のは」ないさ認め引用ライセンス編集できる重要れ
           </p>
         </div>
-        <nav class="grid grid-cols-[1fr_auto_1fr] gap-box">
+        <nav
+          class="grid grid-cols-[1fr_auto_1fr] gap-box items-center text-ink-light"
+        >
           <NuxtLink>
             <span class="i-mdi:chevron-left"></span>過去のお知らせ
           </NuxtLink>
-          <NuxtLink to="/news/">三</NuxtLink>
+          <NuxtLink to="/news/" class="i-mdi:menu text-1.25em"></NuxtLink>
           <NuxtLink class="justify-self-end">
             未来ののお知らせ<span class="i-mdi:chevron-right"> </span>
           </NuxtLink>

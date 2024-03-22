@@ -7,7 +7,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <article class="grid gap-lg">
+  <article class="grid gap-md">
     <img
       :src="img ?? `/img/noImage.png`"
       class="aspect-3/4 object-cover rounded"

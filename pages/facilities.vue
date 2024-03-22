@@ -1,9 +1,4 @@
-<script setup lang="ts">
-definePageMeta({
-  title: '検査と設備',
-  toc: ['当院で行える検査', '設備の紹介'],
-})
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <PageLayout>
@@ -48,7 +43,7 @@ definePageMeta({
                   <span class="h-1px bg-black/20"></span>
                 </header>
                 <div lg="">
-                  <div class="text-sm prose">
+                  <div class="prose">
                     <ContentRenderer :value="post" />
                   </div>
                   <p class="text-xs opacity-75 mt-sm" v-if="post.sicks?.length">
@@ -69,7 +64,7 @@ definePageMeta({
       </PageSection>
 
       <PageSection title="設備の紹介">
-        <ul class="grid gap-box grid-cols-2">
+        <ul class="grid gap-lg grid-cols-2">
           <li>
             <EquipmentItem
               title="内視鏡システム"

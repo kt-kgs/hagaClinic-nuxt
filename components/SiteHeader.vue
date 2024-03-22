@@ -28,7 +28,7 @@ const siteStore = useSiteStore()
             </NuxtLink>
           </li>
         </ul>
-        <p class="text-sm font-400">TEL: 023-624-8686</p>
+        <p class="text-sm text-black/70">TEL: 023-624-8686</p>
       </div>
     </div>
 
@@ -67,34 +67,36 @@ const siteStore = useSiteStore()
         </a>
 
         <!-- Mobile Modal Nav -->
-        <nav
-          class="fixed bg-primary inset-0 p-container-pad text-ink-inv"
-          v-if="siteStore.isSpGNavShow"
-        >
-          <ul class="flex flex-col gap-lg mt-96px">
-            <li v-for="nav in siteStore.navs.global" class="text-right">
-              <NuxtLink
-                :to="nav.href"
-                class="text-lg text-disp"
-                @click="siteStore.isSpGNavShow = false"
-              >
-                {{ nav.label }}
-              </NuxtLink>
-            </li>
-          </ul>
-          <div class="bottom-container-pad absolute flex flex-col gap-lg">
-            <img src="/img/sitting-parent-child.png" alt="" class="w-150px" />
-            <NuxtLink @click="siteStore.isSpGNavShow = false" to="/"
-              ><img src="/img/logo-white.svg" alt="" class="w-150px"
-            /></NuxtLink>
-            <a class="text-disp"><small>TEL: </small>023-624-8686</a>
-          </div>
-          <p
-            class="write-vertical-right text-xs absolute top-container-pad left-container-pad"
+        <transition name="page">
+          <nav
+            class="fixed bg-primary inset-0 p-container-pad text-ink-inv"
+            v-if="siteStore.isSpGNavShow"
           >
-            山形県山形市 消化器専門 クリニック
-          </p>
-        </nav>
+            <ul class="flex flex-col gap-lg mt-96px">
+              <li v-for="nav in siteStore.navs.global" class="text-right">
+                <NuxtLink
+                  :to="nav.href"
+                  class="text-lg text-disp"
+                  @click="siteStore.isSpGNavShow = false"
+                >
+                  {{ nav.label }}
+                </NuxtLink>
+              </li>
+            </ul>
+            <div class="bottom-container-pad absolute flex flex-col gap-lg">
+              <img src="/img/sitting-parent-child.png" alt="" class="w-150px" />
+              <NuxtLink @click="siteStore.isSpGNavShow = false" to="/"
+                ><img src="/img/logo-white.svg" alt="" class="w-150px"
+              /></NuxtLink>
+              <a class="text-disp"><small>TEL: </small>023-624-8686</a>
+            </div>
+            <p
+              class="write-vertical-right text-xs absolute top-container-pad left-container-pad"
+            >
+              山形県山形市 消化器専門 クリニック
+            </p>
+          </nav>
+        </transition>
       </div>
     </Teleport>
   </header>

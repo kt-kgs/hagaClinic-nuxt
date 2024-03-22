@@ -9,6 +9,7 @@ export default <RouterConfig>{
         return {
           el: to.hash,
           behavior: 'smooth',
+          top: 50,
         }
       } else {
         return {
@@ -27,6 +28,7 @@ export default <RouterConfig>{
           if (to.hash) {
             resolve({
               el: to.hash,
+              top: 50,
             })
           }
           resolve({
