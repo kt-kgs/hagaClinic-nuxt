@@ -22,10 +22,10 @@ const titles = posts.value?.map((post) => post.title)
       ></PageLocalNav>
     </template>
     <PageHeader
-      title="タイトルタイトルタイトルタイトル"
+      title="あなたの健康を守る第一歩"
       img="/img/conditions/page-header.jpg"
     >
-      <p>テキストテキストテキストテキストテキストテキストテキスト</p>
+      <p>症状から健康状態を確認するための情報をご案内しています。</p>
     </PageHeader>
     <PageMain>
       <ul class="grid gap-box-lg">

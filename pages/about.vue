@@ -17,7 +17,7 @@ definePageMeta({
     <template #default>
       <PageHeader
         img="/img/about/page-header.jpg"
-        title="ここにタイトルここにタイトル"
+        title="あなたの<wbr>胃腸の健康、<wbr>私たちに<wbr>お任せください"
       >
         <p>
           <span class="font-500">消化器内科：</span>

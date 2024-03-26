@@ -16,7 +16,7 @@
           alt=""
         />
       </figure>
-      <div class="grid gap-box">
+      <div class="grid gap-box items-start self-start">
         <header class="grid grid-cols-[1fr_auto]">
           <h2 class="text-disp">お知らせ</h2>
           <p class="gap-sm flex items-end text-sm items-center">
@@ -24,18 +24,22 @@
           </p>
         </header>
         <ul class="">
-          <li v-for="(v, i) in 4" class="">
-            <NuxtLink
-              to="/news/test"
-              class="grid grid-cols-[auto_1fr_auto] gap-md items-center py-md border-b-1px"
-            >
-              <div class="col-span-2" md="contents">
-                <small class="text-xs">2024.01.31</small>
-                <h3 class="">ニュース記事タイトルをここに</h3>
-              </div>
-              <span class="i-mdi:chevron-right"></span>
-            </NuxtLink>
-          </li>
+          <ContentList path="/news" v-slot="{ list }">
+            <li v-for="(post, i) in list" class="">
+              <NuxtLink
+                :to="`${post._path}`"
+                class="grid grid-cols-[auto_1fr_auto] gap-md items-center py-md border-b-1px"
+              >
+                <div class="col-span-2" md="contents">
+                  <small class="text-xs">{{
+                    new Date(post.date).toLocaleDateString('Ja-jp')
+                  }}</small>
+                  <h3 class="">{{ post.title }}</h3>
+                </div>
+                <span class="i-mdi:chevron-right"></span>
+              </NuxtLink>
+            </li>
+          </ContentList>
         </ul>
       </div>
     </section>

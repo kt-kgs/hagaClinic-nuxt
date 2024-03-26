@@ -135,7 +135,7 @@ export default defineConfig<Theme>({
       /^wbrs$/,
       (m) => ({
         'word-break': 'keep-all',
-        'overflow-wrap': 'break-word',
+        'overflow-wrap': 'anywhere',
         // 'word-break': 'auto-phrase',
         // 'overflow-wrap': 'anywhere',
       }),
