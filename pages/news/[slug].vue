@@ -14,7 +14,7 @@
             <h1 class="text-disp-lg">{{ doc.title }}</h1>
             <img
               src="/img/noImage.png"
-              class="aspect-16/9 object-cover"
+              class="aspect-16/9 object-cover rounded"
               alt=""
             />
           </header>

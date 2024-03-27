@@ -39,12 +39,12 @@
       </PageSection>
 
       <PageSection title="予約と問診">
-        <p class="text-disp-lg">
+        <p class="text-disp-xl">
           <small class="text-0.5em">TEL: </small>023-624-8686
         </p>
 
         <!-- 問診BOX -->
-        <div class="bg-white p-box-sm rounded grid gap-lg w-fit">
+        <!-- <div class="bg-white p-box-sm rounded grid gap-lg w-fit">
           <h3 class="text-disp-sm wbrs">
             「WEB 問診」にご協力おねがい致します
           </h3>
@@ -61,7 +61,7 @@
             <span class="i-mdi:clipboard-account text-1.75em"></span>
             WEB問診はこちらから
           </a>
-        </div>
+        </div> -->
       </PageSection>
     </PageMain>
   </PageLayout>

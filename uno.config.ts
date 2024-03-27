@@ -84,6 +84,7 @@ const fontSize = new KtUnoCssVar('fz', {
     sm: fluid(22, 26),
     DEFAULT: fluid(24, 32),
     lg: fluid(28, 40),
+    xl: fluid(36, 64),
   },
 })
 

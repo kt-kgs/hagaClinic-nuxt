@@ -6,21 +6,21 @@ const posts = [
     href: '/conditions/',
     links: [
       {
-        label: '胃腸',
-        href: '#',
+        label: '発熱',
+        href: '/conditions/#発熱',
       },
       {
-        label: '胸焼け',
-        href: '#',
+        label: '腹痛',
+        href: '/conditions/#腹痛',
       },
       {
-        label: '頭痛',
-        href: '#',
+        label: '下痢',
+        href: '/conditions/#下痢',
       },
 
       {
-        label: '胃痛',
-        href: '#',
+        label: '便秘',
+        href: '/conditions/#便秘',
       },
     ],
   },
