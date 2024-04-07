@@ -6,7 +6,7 @@
 
     <!-- News Section -->
     <section class="grid gap-box-lg ktc relative" lg="grid-cols-2">
-      <DecoSymbols class="w-55% top-25% left-45%" dir="x"></DecoSymbols>
+      <!-- <DecoSymbols class="w-55% top-25% left-45%" dir="x"></DecoSymbols> -->
 
       <figure class="-ml-container-pad w-80%" lg="ml-0 w-full">
         <img

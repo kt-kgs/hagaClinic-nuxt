@@ -91,11 +91,11 @@ onUnmounted(() => {
         >当院について<wbr />詳しく</BtnBase
       >
     </div>
-    <DecoSymbols class="w-50% inset-[38%_30%_auto_auto]" dir="x"></DecoSymbols>
+    <!-- <DecoSymbols class="w-50% inset-[38%_30%_auto_auto]" dir="x"></DecoSymbols>
     <DecoSymbols
       class="w-40% inset-[auto_auto_-55%_-13%;]"
       dir="y"
-    ></DecoSymbols>
+    ></DecoSymbols> -->
   </section>
 </template>
 
