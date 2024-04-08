@@ -30,6 +30,7 @@ body {
   background: rgb(0 0 0 / 4%);
   line-height: 1.8;
   font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: var(--fz-md);
 }
 
 * {
