@@ -12,7 +12,7 @@ const props = defineProps<{
       <img :src="img" class="object-cover aspect-16/9 rounded" alt="" />
     </figure>
     <div class="grid gap-lg">
-      <h2 class="text-disp wbrs" v-html="title"></h2>
+      <p class="text-disp wbrs" v-html="title"></p>
       <div>
         <slot></slot>
       </div>

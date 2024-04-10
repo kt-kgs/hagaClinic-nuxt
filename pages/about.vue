@@ -1,13 +1,14 @@
 <script setup lang="ts">
-definePageMeta({
+useHead({
   title: '当院について',
-  description: '当院の診療案内ページです。',
 })
 </script>
 
 <template>
   <PageLayout>
     <template #side>
+      <h1 class="sr-only">当院について</h1>
+
       <PageLocalNav
         title="当院について"
         :list="['3つの特色', '医師の紹介', '院内の風景']"

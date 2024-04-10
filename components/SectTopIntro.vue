@@ -80,9 +80,9 @@ onUnmounted(() => {
       class="ktc gap-lg grid relative"
       lg="order--1 self-center justify-self-end mx-none"
     >
-      <h2 class="text-center text-disp-lg font-400 wbrs">
+      <p class="text-center text-disp-lg font-400 wbrs">
         高い専門性と<wbr />安心・快適な医療を<wbr />お届けします。
-      </h2>
+      </p>
       <p class="text-center wbrs">
         質の高い医療、<wbr />苦痛に配慮した<wbr />内視鏡検査を提供し、
         地域の皆様<wbr />１人１人の健康を<wbr />サポートします。

@@ -53,9 +53,9 @@ onMounted(() => {
   >
     <div class="" lg="">
       <a href="#">
-        <h2 class="text-disp text-center" lg="text-left">
+        <p class="text-disp text-center" lg="text-left">
           {{ title }}
-        </h2>
+        </p>
       </a>
     </div>
     <ul

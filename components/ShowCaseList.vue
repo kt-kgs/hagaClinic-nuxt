@@ -82,6 +82,7 @@ const posts = [
           </h3>
           <span
             class="i-mdi:chevron-right text-1.5em mt-0.15em duration-200 [*:hover>&]:translate-x-0.25em"
+            lg="mt-0"
           ></span>
         </NuxtLink>
         <ul class="mt-box grid content-end">

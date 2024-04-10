@@ -1,10 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({
+  title: '診療案内',
+})
+</script>
 
 <template>
   <PageLayout>
+    <h1 class="sr-only">診療案内</h1>
+
     <template #side>
       <PageLocalNav
-        title="当院について"
+        title="診療案内"
         :list="['診療時間', 'アクセス', '予約と問診']"
       ></PageLocalNav>
     </template>
@@ -36,15 +42,26 @@
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
+        <dl class="grid grid-cols-[auto_1fr] gap-1em">
+          <dt class="">駐車場：</dt>
+          <dd>
+            車でお越しの際にはクリニック敷地内に駐車場 (16台) がございます。
+            近隣の第二駐車場 (8台) もご利用いただけます。
+          </dd>
+          <dt>お願い：</dt>
+          <dd>
+            患者様皆様の感染予防のため、来院時にはマスク着用にご理解・ご協力をお願いいたします。
+          </dd>
+        </dl>
       </PageSection>
 
       <PageSection title="予約と問診">
-        <p class="text-disp-xl">
+        <a href="tel:023-624-8686" class="text-disp-xl">
           <small class="text-0.5em">TEL: </small>023-624-8686
-        </p>
+        </a>
 
         <!-- 問診BOX -->
-        <!-- <div class="bg-white p-box-sm rounded grid gap-lg w-fit">
+        <div class="bg-white p-box-sm rounded grid gap-lg w-fit">
           <h3 class="text-disp-sm wbrs">
             「WEB 問診」にご協力おねがい致します
           </h3>
@@ -61,7 +78,7 @@
             <span class="i-mdi:clipboard-account text-1.75em"></span>
             WEB問診はこちらから
           </a>
-        </div> -->
+        </div>
       </PageSection>
     </PageMain>
   </PageLayout>

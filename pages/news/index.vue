@@ -1,6 +1,6 @@
 <script setup lang="ts">
-definePageMeta({
-  layout: 'page',
+useHead({
+  title: 'お知らせ',
 })
 </script>
 
@@ -11,6 +11,8 @@ definePageMeta({
     </template>
 
     <PageMain>
+      <h1 class="sr-only">お知らせ一覧</h1>
+
       <PageSection title="">
         <ul class="grid gap-box">
           <ContentList path="/news" v-slot="{ list }">

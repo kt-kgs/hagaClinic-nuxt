@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({})
+</script>
 
 <template>
   <PageMain>
+    <h1 class="sr-only">芳賀胃腸科内科クリニック</h1>
+
     <SectTopIntro />
 
     <!-- News Section -->

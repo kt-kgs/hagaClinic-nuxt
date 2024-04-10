@@ -12,7 +12,7 @@ const siteStore = useSiteStore()
       </div>
 
       <!-- Desktop -->
-      <div
+      <nav
         class="lt-lg:hidden flex gap-y-lg gap-x-box-sm items-baseline flex-wrap justify-end"
       >
         <ul class="gap-lg flex">
@@ -29,7 +29,7 @@ const siteStore = useSiteStore()
           </li>
         </ul>
         <p class="text-sm text-black/70">TEL: 023-624-8686</p>
-      </div>
+      </nav>
     </div>
 
     <!-- Mobile -->
@@ -44,7 +44,7 @@ const siteStore = useSiteStore()
         >
           <svg
             viewBox="0 0 100 100"
-            size="50%"
+            class="size-50%"
             :class="{ hidden: siteStore.isSpGNavShow }"
           >
             <g class="stroke-5 stroke-primary">
@@ -55,7 +55,7 @@ const siteStore = useSiteStore()
           </svg>
           <svg
             viewBox="0 0 100 100"
-            size="50%"
+            class="size-50%"
             :class="{ hidden: !siteStore.isSpGNavShow }"
           >
             <g class="stroke-5 stroke-primary">

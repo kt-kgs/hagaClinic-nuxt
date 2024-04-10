@@ -1,4 +1,8 @@
 <script setup lang="ts">
+useHead({
+  title: '症状から探す',
+})
+
 const { data: posts } = await useAsyncData('conditions', () =>
   queryContent('conditions').find()
 )
@@ -7,9 +11,11 @@ const titles = posts.value?.map((post) => post.title)
 
 <template>
   <PageLayout>
+    <h1 class="sr-only">症状から探す</h1>
+
     <template #side>
       <PageLocalNav
-        title="当院について"
+        title="症状から探す"
         :list="[
           '発熱',
           '腹痛',

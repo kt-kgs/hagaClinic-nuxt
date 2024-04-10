@@ -1,10 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({
+  title: '検査と設備',
+})
+</script>
 
 <template>
   <PageLayout>
     <template #side>
+      <h1 class="sr-only">検査と設備</h1>
       <PageLocalNav
-        title="当院について"
+        title="検査と設備"
         :list="['当院で行える検査', '設備の紹介']"
       ></PageLocalNav>
     </template>
@@ -24,43 +29,7 @@
     <PageMain>
       <!-- Inspections -->
       <PageSection title="当院で行える検査">
-        <ul class="grid gap-box">
-          <ContentList path="/inspections" v-slot="{ list }">
-            <li v-for="(post, i) in list">
-              <article
-                class="grid gap-lg"
-                lg="grid-cols-[6fr_4fr] grid-rows-[auto_auto]"
-              >
-                <header
-                  class="grid grid-cols-[auto_auto_1fr] items-center gap-md"
-                  lg="col-span-full"
-                >
-                  <span
-                    class="text-disp-sm grid px-0.75em py-0 border-black-1px/20 border-x-1px"
-                    >{{ String(i + 1).padStart(2, '0') }}</span
-                  >
-                  <h3 class="text-disp-sm">{{ post.title }}</h3>
-                  <span class="h-1px bg-black/20"></span>
-                </header>
-                <div lg="">
-                  <div class="prose">
-                    <ContentRenderer :value="post" />
-                  </div>
-                  <p class="text-xs opacity-75 mt-sm" v-if="post.sicks?.length">
-                    発見できる病気： {{ post.sicks.join(' / ') }}
-                  </p>
-                </div>
-                <figure>
-                  <img
-                    :src="post.img"
-                    class="aspect-3/2 object-cover rounded"
-                    alt=""
-                  />
-                </figure>
-              </article>
-            </li>
-          </ContentList>
-        </ul>
+        <InspectionList />
       </PageSection>
 
       <PageSection title="設備の紹介">
@@ -108,20 +77,44 @@
           </li>
         </ul>
 
-        <div class="prose p-lg border border-black/20 rounded">
-          <h3 class="text-disp">その他の設備</h3>
-          <p>
-            感染症診察室：<br />風邪症状の方専用の診察室を2024年に新設しました。夏や冬でも室内でお待ちいただけます。
-          </p>
-          <p>
-            デジタルX 線テレビシステム：<br />当院は透視室を備えており、レントゲン検査だけでなく、リアルタイムでの動画撮影が可能で、詳細な大腸透視や胃透視検査も受けていただけます。
-          </p>
-          <p>
-            リカバリーベッド：<br />内視鏡で鎮静剤を使用した方や、具合が悪い患者様が休んで頂けるように、プライバシーに配慮したベッドを複数用意しています。
-          </p>
-          <p>
-            完全バリアフリー：<br />車椅子の方でもストレスなく通院していただけるように配慮しております。
-          </p>
+        <div class="grid gap-lg p-box-sm border border-black/20 rounded">
+          <h3 class="text-disp-sm">その他の設備</h3>
+          <dl
+            class="space-y-0.5em"
+            v-for="v in [
+              {
+                title: '感染症診察室',
+                desc: '風邪症状の方専用の診察室を2024年に新設しました。夏や冬でも室内でお待ちいただけます。',
+              },
+              {
+                title: 'デジタルX 線テレビシステム',
+                desc: '当院は透視室を備えており、レントゲン検査だけでなく、リアルタイムでの動画撮影が可能で、詳細な大腸透視や胃透視検査も受けていただけます。',
+              },
+              {
+                title: 'リカバリーベッド',
+                desc: '内視鏡で鎮静剤を使用した方や、具合が悪い患者様が休んで頂けるように、プライバシーに配慮したベッドを複数用意しています。',
+              },
+              {
+                title: '完全バリアフリー',
+                desc: '車椅子の方でもストレスなく通院していただけるように配慮しております。',
+              },
+              {
+                title: 'スパイロメータ（呼吸機能検査）',
+                desc: '喘息や肺の病気がないか、呼吸の機能を調べます。',
+              },
+              {
+                title: '簡易睡眠時無呼吸検査',
+                desc: '睡眠中の呼吸状態の評価や、治療の効果判定が可能です。',
+              },
+            ]"
+          >
+            <dt class="border-b-1 border-black/20 inline-block">
+              {{ v.title }}
+            </dt>
+            <dd>
+              {{ v.desc }}
+            </dd>
+          </dl>
         </div>
       </PageSection>
     </PageMain>

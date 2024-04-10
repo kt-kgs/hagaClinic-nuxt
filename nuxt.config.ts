@@ -9,33 +9,15 @@ export default defineNuxtConfig({
         min: '640px',
         max: '1920px',
       },
-      // './utils/ktPostcss.ts': {},
     },
   },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
-    head: {
-      link: [
-        // svgのファビコン
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-      ],
-    },
   },
   content: {
+    contentHead: false,
     markdown: {
       anchorLinks: false,
     },
   },
-  // imports: {
-  //   presets: [
-  //     {
-  //       from: 'gsap/all',
-  //       imports: ['ScrollTrigger', ]
-  //     },
-  //     {
-  //       from: 'gsap',
-  //       imports: ['gsap'],
-  //     }
-  //   ]
-  // }
 })

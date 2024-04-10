@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({
+  title: 'お知らせ',
+})
+</script>
 
 <template>
   <PageLayout>
@@ -12,11 +16,13 @@
           <header class="grid gap-lg">
             <p class="">{{ new Date(doc.date).toLocaleDateString('ja') }}</p>
             <h1 class="text-disp-lg">{{ doc.title }}</h1>
-            <img
-              src="/img/noImage.png"
-              class="aspect-16/9 object-cover rounded"
-              alt=""
-            />
+            <template v-if="doc.img">
+              <img
+                src="/img/noImage.png"
+                class="aspect-16/9 object-cover rounded"
+                alt=""
+              />
+            </template>
           </header>
           <ContentRenderer :value="doc" class="prose" />
 
