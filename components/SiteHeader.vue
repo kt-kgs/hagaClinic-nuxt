@@ -88,7 +88,9 @@ const siteStore = useSiteStore()
               <NuxtLink @click="siteStore.isSpGNavShow = false" to="/"
                 ><img src="/img/logo-white.svg" alt="" class="w-150px"
               /></NuxtLink>
-              <a class="text-disp"><small>TEL: </small>023-624-8686</a>
+              <a href="tel:023-624-8686" class="text-disp"
+                ><small>TEL: </small>023-624-8686</a
+              >
             </div>
             <p
               class="write-vertical-right text-xs absolute top-container-pad left-container-pad"
