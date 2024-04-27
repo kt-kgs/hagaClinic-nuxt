@@ -61,7 +61,7 @@ useHead({
         </a>
 
         <!-- 問診BOX -->
-        <div class="bg-white p-box-sm rounded grid gap-lg w-fit">
+        <!-- <div class="bg-white p-box-sm rounded grid gap-lg w-fit">
           <h3 class="text-disp-sm wbrs">
             「WEB 問診」にご協力おねがい致します
           </h3>
@@ -72,13 +72,13 @@ useHead({
             ※WEB問診にご回答いただいても来院予約にはなりません。予約は別途お電話でお取りください。
           </p>
           <a
-            href="#"
+            href=""
             class="bg-secondary-text rounded-999px color-ink-inv py-1.5em px-3em w-fit grid gap-0.5em justify-center items-center grid-cols-[auto_auto]"
           >
             <span class="i-mdi:clipboard-account text-1.75em"></span>
             WEB問診はこちらから
           </a>
-        </div>
+        </div> -->
       </PageSection>
     </PageMain>
   </PageLayout>
