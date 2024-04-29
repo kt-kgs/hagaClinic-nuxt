@@ -31,7 +31,9 @@ const siteStore = useSiteStore()
       class="grid gap-xs justify-items-center"
       xxl="row-[1/3] justify-items-start"
     >
-      <p class="text-disp"><small class="mr-md">TEL:</small>023-624-8686</p>
+      <a href="tel:023-624-8686" class="text-disp"
+        ><small class="mr-md">TEL:</small>023-624-8686</a
+      >
       <p class="text-md">FAX: 023-624-3339</p>
       <p class="text-md">〒990-0025 山形市あこや町2-15-1</p>
     </div>
