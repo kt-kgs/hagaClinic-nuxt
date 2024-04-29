@@ -28,7 +28,9 @@ const siteStore = useSiteStore()
             </NuxtLink>
           </li>
         </ul>
-        <p class="text-sm text-black/70">TEL: 023-624-8686</p>
+        <a href="tel:023-624-8686" class="text-sm text-black/70"
+          >TEL: 023-624-8686</a
+        >
       </nav>
     </div>
 
