@@ -14,7 +14,7 @@ const isShow = ref(false)
     </template>
     <template v-else>
       <span class="i-mdi:minus"></span>
-      閉じる
+      詳細を閉じる
     </template>
   </button>
 </template>
