@@ -204,6 +204,7 @@ export default defineConfig<Theme>({
     }),
     // presetTypography(),
   ],
+  safelist: 'font-500 font-400 font-700 underline text-lg mt-lg'.split(' '),
 })
 
 import valueParser from 'postcss-value-parser'

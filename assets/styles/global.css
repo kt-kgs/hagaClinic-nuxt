@@ -73,12 +73,34 @@ img {
         width: 0.25em;
         height: 0.25em;
         border-radius: 9999px;
-        background-color: v-bind(cssColorText);
+        background-color: currentColor;
         position: absolute;
         inset: 0.8em auto auto 0.5em;
         margin: auto;
-        color: v-bind(cssColor);
       }
+      + li {
+        margin-top: 0.25em;
+      }
+    }
+  }
+  ol {
+    counter-reset: item;
+    li {
+      padding-left: 1.25em;
+      &:before {
+        counter-increment: item;
+        content: counter(item);
+        position: absolute;
+        margin-left: -1em;
+      }
+    }
+  }
+  dl {
+    dt {
+      font-weight: 500;
+    }
+    dd {
+      margin-top: 0.25em;
     }
   }
 }
