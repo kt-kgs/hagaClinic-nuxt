@@ -18,18 +18,15 @@ function hide() {
 
   isShow.value = false
 
-  nextTick(() => {
-    scrollTo({
-      top: scrollY - contentHeight,
-    })
-  })
+  // nextTick(() => {
+  //   scrollTo({
+  //     top: scrollY - contentHeight,
+  //   })
+  // })
 }
 </script>
 
 <template>
-  <div ref="contentRef">
-    <slot class="" v-if="isShow"></slot>
-  </div>
   <button
     @click="toggle()"
     class="flex items-center text-xs bg-transparent text-primary-text gap-0.25em"
@@ -44,6 +41,9 @@ function hide() {
       詳細を閉じる
     </template>
   </button>
+  <div ref="contentRef">
+    <slot class="" v-if="isShow"></slot>
+  </div>
 </template>
 
 <style scoped></style>
