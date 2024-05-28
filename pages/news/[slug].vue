@@ -2,6 +2,10 @@
 useHead({
   title: 'お知らせ',
 })
+
+const surroundPosts = await queryContent('news').findSurround(
+  useRoute().fullPath
+)
 </script>
 
 <template>
@@ -29,9 +33,13 @@ useHead({
           <nav
             class="grid grid-cols-[1fr_auto_1fr] gap-box items-center text-ink-light"
           >
-            <template v-if="doc.prev">
-              <NuxtLink class="col-start-1">
-                <span class="i-mdi:chevron-left"></span>過去のお知らせ
+            <template v-if="surroundPosts[0]">
+              <NuxtLink
+                :to="surroundPosts[0]._path"
+                class="col-start-1 truncate flex items-center gap-xs"
+              >
+                <span class="i-mdi:chevron-left"></span>
+                <span class="text-xs">{{ surroundPosts[0].title }}</span>
               </NuxtLink>
             </template>
             <template v-if="true">
@@ -40,9 +48,13 @@ useHead({
                 class="i-mdi:menu text-1.25em col-start-2"
               ></NuxtLink>
             </template>
-            <template v-if="doc.next">
-              <NuxtLink class="justify-self-end col-start-3">
-                未来ののお知らせ<span class="i-mdi:chevron-right"> </span>
+            <template v-if="surroundPosts[1]">
+              <NuxtLink
+                :to="surroundPosts[1]._path"
+                class="justify-self-end col-start-3 truncate flex items-center gap-xs"
+              >
+                <span class="text-xs">{{ surroundPosts[1].title }}</span>
+                <span class="i-mdi:chevron-right"> </span>
               </NuxtLink>
             </template>
           </nav>

@@ -28,7 +28,11 @@ useHead({})
           </p>
         </header>
         <ul class="">
-          <ContentList path="/news" v-slot="{ list }">
+          <ContentList
+            path="/news"
+            :query="{ sort: { date: -1 } }"
+            v-slot="{ list }"
+          >
             <li v-for="(post, i) in list" class="">
               <NuxtLink
                 :to="`${post._path}`"

@@ -15,7 +15,11 @@ useHead({
 
       <PageSection title="">
         <ul class="grid gap-box">
-          <ContentList path="/news" v-slot="{ list }">
+          <ContentList
+            path="/news"
+            :query="{ sort: { date: -1 }, order: 'DESC' }"
+            v-slot="{ list }"
+          >
             <li v-for="post in list">
               <article>
                 <NuxtLink
