@@ -31,32 +31,43 @@ const surroundPosts = await queryContent('news').findSurround(
           <ContentRenderer :value="doc" class="prose" />
 
           <nav
-            class="grid grid-cols-[1fr_auto_1fr] gap-box items-center text-ink-light"
+            class="grid grid-cols-[1fr_auto_1fr] gap-lg items-center text-ink-light"
           >
-            <template v-if="surroundPosts[0]">
+            <!-- 左ナビ -->
+            <div>
               <NuxtLink
+                v-if="surroundPosts[0]"
                 :to="surroundPosts[0]._path"
-                class="col-start-1 truncate flex items-center gap-xs"
+                class="grid grid-cols-[auto_1fr] items-center gap-xs"
               >
                 <span class="i-mdi:chevron-left"></span>
-                <span class="text-xs">{{ surroundPosts[0].title }}</span>
+                <span class="text-xs line-clamp-2 leading-160%">{{
+                  surroundPosts[0].title
+                }}</span>
               </NuxtLink>
-            </template>
-            <template v-if="true">
+            </div>
+
+            <!-- 中央ナビ -->
+            <div v-if="true">
               <NuxtLink
                 to="/news/"
                 class="i-mdi:menu text-1.25em col-start-2"
               ></NuxtLink>
-            </template>
-            <template v-if="surroundPosts[1]">
+            </div>
+
+            <!-- 右ナビ -->
+            <div class="justify-self-end">
               <NuxtLink
+                v-if="surroundPosts[1]"
                 :to="surroundPosts[1]._path"
-                class="justify-self-end col-start-3 truncate flex items-center gap-xs"
+                class="grid grid-cols-[1fr_auto] items-center items-center gap-xs"
               >
-                <span class="text-xs">{{ surroundPosts[1].title }}</span>
+                <span class="text-xs line-clamp-2 text-right leading-160%">{{
+                  surroundPosts[1].title
+                }}</span>
                 <span class="i-mdi:chevron-right"> </span>
               </NuxtLink>
-            </template>
+            </div>
           </nav>
         </div>
       </ContentDoc>

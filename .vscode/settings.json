@@ -2,5 +2,5 @@
   "path-intellisense.mappings": {
     "/": "${workspaceFolder}/public/"
   },
-  "cSpell.words": ["ktcs"]
+  "cSpell.words": ["haga", "ktcs"]
 }
