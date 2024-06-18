@@ -38,8 +38,7 @@ const siteStore = useSiteStore()
     <Teleport to="#teleports">
       <div class="z-100 absolute" v-if="siteStore">
         <!-- Mobile Button -->
-        <a
-          href="#"
+        <button
           class="size-48px bg-white grid place-items-center rounded-full fixed z-101 right-container-pad top-[fluid(16,24)]"
           lg="hidden"
           @click="siteStore.toggleSpGNav()"
@@ -66,7 +65,7 @@ const siteStore = useSiteStore()
               <line x1="3" x2="97" y1="80" y2="20" />
             </g>
           </svg>
-        </a>
+        </button>
 
         <!-- Mobile Modal Nav -->
         <transition name="page">
