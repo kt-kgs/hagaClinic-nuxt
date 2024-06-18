@@ -62,8 +62,8 @@ useHead({
 
         <!-- 問診BOX -->
         <div class="bg-white p-box-sm rounded grid gap-lg w-fit">
-          <h3 class="text-disp-sm wbrs">
-            「WEB 問診」にご協力おねがい致します
+          <h3 class="text-disp-sm">
+            「WEB 問診」に<br class="lg-hidden" />ご協力おねがい致します
           </h3>
           <p>
             当院では受診前にWEBでの問診システムのご記入をお願いしております。ご来院前に事前に問診をご記入いただきますと受付がスムーズとなりますので、是非ご協力ください。
