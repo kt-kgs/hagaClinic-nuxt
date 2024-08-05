@@ -17,6 +17,7 @@
     "@emotion/react": "^11.11.4",
     "@iconify/json": "^2.2.190",
     "@nuxt/content": "^2.12.1",
+    "@nuxt/scripts": "^0.6.5",
     "@pinia/nuxt": "^0.5.1",
     "@unocss/nuxt": "^0.58.5",
     "@unocss/preset-rem-to-px": "^0.58.5",

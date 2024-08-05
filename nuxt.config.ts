@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@unocss/nuxt', '@nuxt/content', '@pinia/nuxt'],
+  modules: ['@unocss/nuxt', '@nuxt/content', '@pinia/nuxt', '@nuxt/scripts'],
   postcss: {
     plugins: {
       'postcss-nested': {},
@@ -13,6 +13,15 @@ export default defineNuxtConfig({
   },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
+  },
+  $production: {
+    scripts: {
+      registry: {
+        googleTagManager: {
+          id: 'GTM-MZCFG24T',
+        },
+      },
+    },
   },
   content: {
     contentHead: false,
