@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@unocss/nuxt', '@nuxt/content', '@pinia/nuxt', '@nuxt/scripts'],
+
   postcss: {
     plugins: {
       'postcss-nested': {},
@@ -11,9 +12,11 @@ export default defineNuxtConfig({
       },
     },
   },
+
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
   },
+
   $production: {
     scripts: {
       registry: {
@@ -23,10 +26,13 @@ export default defineNuxtConfig({
       },
     },
   },
+
   content: {
     contentHead: false,
     markdown: {
       anchorLinks: false,
     },
   },
+
+  compatibilityDate: '2024-10-02',
 })

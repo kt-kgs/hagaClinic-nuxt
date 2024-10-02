@@ -26,7 +26,7 @@
     "@unocss/transformer-variant-group": "^0.58.5",
     "gsap": "^3.12.5",
     "modern-normalize": "^2.0.0",
-    "nuxt": "^3.11.0",
+    "nuxt": "^3.13.2",
     "pinia": "^2.1.7",
     "postcss-nested": "^6.0.1",
     "postcss-value-parser": "^4.2.0",
