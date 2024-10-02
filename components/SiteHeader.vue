@@ -4,7 +4,10 @@ const siteStore = useSiteStore()
 
 <template>
   <header>
-    <div class="flex w-full items-center justify-between p-container-pad" lg="">
+    <div
+      class="flex w-full gap-x-box items-center justify-between p-container-pad"
+      lg=""
+    >
       <div class="shrink-0">
         <NuxtLink to="/"
           ><img src="/img/logo.svg" class="sticky w-180px-326px" alt=""
@@ -15,7 +18,7 @@ const siteStore = useSiteStore()
       <nav
         class="lt-lg:hidden flex gap-y-lg gap-x-box-sm items-baseline flex-wrap justify-end"
       >
-        <ul class="gap-lg flex">
+        <ul class="gap-x-box-sm gap-y-0 flex flex-wrap justify-end">
           <li v-for="nav in siteStore.navs.global" :key="nav.label">
             <NuxtLink
               :to="nav.href"

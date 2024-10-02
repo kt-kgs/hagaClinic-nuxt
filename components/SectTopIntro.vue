@@ -77,14 +77,14 @@ onUnmounted(() => {
 
     <!-- descArea -->
     <div
-      class="ktc gap-lg grid relative"
+      class="ktc gap-box grid relative"
       lg="order--1 self-center justify-self-end mx-none"
     >
       <p class="text-center text-disp-lg font-400 wbrs">
         高い専門性と<wbr />安心・快適な医療を<wbr />お届けします。
       </p>
       <p class="text-center wbrs">
-        質の高い医療、<wbr />苦痛に配慮した<wbr />内視鏡検査を提供し、
+        質の高い医療、<wbr />苦痛に配慮した<wbr />内視鏡検査を提供し、<br />
         地域の皆様<wbr />１人１人の健康を<wbr />サポートします。
       </p>
       <BtnBase class="mx-auto wbrs" to="/about/"

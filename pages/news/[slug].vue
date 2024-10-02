@@ -16,20 +16,21 @@ const surroundPosts = await queryContent('news').findSurround(
 
     <PageMain>
       <ContentDoc :path="$route.fullPath" v-slot="{ doc }">
-        <div class="grid gap-box-sm pb-sect">
-          <header class="grid gap-lg">
-            <p class="">{{ new Date(doc.date).toLocaleDateString('ja') }}</p>
-            <h1 class="text-disp-lg">{{ doc.title }}</h1>
-            <template v-if="doc.img">
-              <img
-                src="/img/noImage.png"
-                class="aspect-16/9 object-cover rounded"
-                alt=""
-              />
-            </template>
-          </header>
-          <ContentRenderer :value="doc" class="prose" />
-
+        <div class="grid gap-sect">
+          <div class="grid gap-box-sm">
+            <header class="grid gap-lg">
+              <p class="">{{ new Date(doc.date).toLocaleDateString('ja') }}</p>
+              <h1 class="text-disp-lg">{{ doc.title }}</h1>
+              <template v-if="doc.img">
+                <img
+                  src="/img/noImage.png"
+                  class="aspect-16/9 object-cover rounded"
+                  alt=""
+                />
+              </template>
+            </header>
+            <ContentRenderer :value="doc" class="prose" />
+          </div>
           <nav
             class="grid grid-cols-[1fr_auto_1fr] gap-lg items-center text-ink-light"
           >
@@ -46,7 +47,6 @@ const surroundPosts = await queryContent('news').findSurround(
                 }}</span>
               </NuxtLink>
             </div>
-
             <!-- 中央ナビ -->
             <div v-if="true">
               <NuxtLink
@@ -54,7 +54,6 @@ const surroundPosts = await queryContent('news').findSurround(
                 class="i-mdi:menu text-1.25em col-start-2"
               ></NuxtLink>
             </div>
-
             <!-- 右ナビ -->
             <div class="justify-self-end">
               <NuxtLink
@@ -68,9 +67,8 @@ const surroundPosts = await queryContent('news').findSurround(
                 <span class="i-mdi:chevron-right"> </span>
               </NuxtLink>
             </div>
-          </nav>
-        </div>
-      </ContentDoc>
+          </nav></div
+      ></ContentDoc>
     </PageMain>
   </PageLayout>
 </template>
