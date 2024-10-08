@@ -1,7 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@unocss/nuxt', '@nuxt/content', '@pinia/nuxt', '@nuxt/scripts'],
+  modules: [
+    '@unocss/nuxt',
+    '@nuxt/content',
+    '@pinia/nuxt',
+    '@nuxt/scripts',
+    '@nuxthq/studio',
+  ],
 
   postcss: {
     plugins: {
