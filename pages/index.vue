@@ -23,9 +23,12 @@ useHead({})
       <div class="grid gap-box items-start self-start">
         <header class="grid grid-cols-[1fr_auto]">
           <h2 class="text-disp">お知らせ</h2>
-          <p class="gap-sm flex items-end text-sm items-center">
+          <NuxtLink
+            to="/news"
+            class="gap-sm flex items-end text-sm items-center"
+          >
             一覧へ<span class="i-mdi:chevron-right"></span>
-          </p>
+          </NuxtLink>
         </header>
         <ul class="">
           <ContentList
