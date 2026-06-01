@@ -4,7 +4,7 @@ useHead({
 })
 
 const surroundPosts = await queryContent('news').findSurround(
-  useRoute().fullPath
+  useRoute().fullPath,
 )
 </script>
 
@@ -73,10 +73,4 @@ const surroundPosts = await queryContent('news').findSurround(
   </PageLayout>
 </template>
 
-<style scoped>
-.prose {
-  *:not(first-child) {
-    margin-top: 1.5rem;
-  }
-}
-</style>
+<style scoped></style>

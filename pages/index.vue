@@ -30,16 +30,16 @@ useHead({})
             一覧へ<span class="i-mdi:chevron-right"></span>
           </NuxtLink>
         </header>
-        <ul class="">
+        <ul class="grid grid-cols-[auto_1fr_auto] gap-md">
           <ContentList
             path="/news"
             :query="{ sort: { date: -1 } }"
             v-slot="{ list }"
           >
-            <li v-for="(post, i) in list" class="">
+            <li v-for="(post, i) in list" class="contents">
               <NuxtLink
                 :to="`${post._path}`"
-                class="grid grid-cols-[auto_1fr_auto] gap-md items-center py-md border-b-1px"
+                class="grid grid-cols-subgrid col-span-full grid-cols-[auto_1fr_auto] gap-md items-center py-md border-b-1px"
               >
                 <div class="col-span-2" md="contents">
                   <small class="text-xs">{{
