@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data: posts } = useAsyncData('doctors', () =>
-  queryContent('doctors').find()
+  queryContent('doctors').find(),
 )
 </script>
 
@@ -30,20 +30,38 @@ const { data: posts } = useAsyncData('doctors', () =>
           <ContentRenderer :value="post" class="prose"></ContentRenderer>
         </div>
 
-        <!-- 略歴・資格 -->
-        <dl class="grid gap-md">
-          <div
-            v-for="(note, key, i) in post.notes"
-            class="_row grid grid-cols-[auto_1fr] gap-lg font-300 text-xs"
-          >
-            <dt class="">{{ key }}</dt>
-            <dd class="border-l-1px border-black/20 pl-lg">
-              <ul>
-                <li v-for="(p, k, i) in note">{{ p }}</li>
-              </ul>
-            </dd>
+        <div class="grid gap-md">
+          <!-- 略歴・資格 -->
+          <dl class="grid gap-md">
+            <div
+              v-for="(note, key, i) in post.notes"
+              class="_row grid grid-cols-[auto_1fr] gap-lg font-300 text-xs"
+            >
+              <dt class="">{{ key }}</dt>
+              <dd class="border-l-1px border-black/20 pl-lg">
+                <ul>
+                  <li v-for="(p, k, i) in note">{{ p }}</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+
+          <!-- 外部リンクエリア -->
+          <div v-if="post.links">
+            <ul v-for="v in post.links">
+              <li>
+                <a
+                  :href="v.href"
+                  target="_blank"
+                  class="text-sm w-fit trim flex gap-[0.25em] items-center text-primary-text border-1 px-[1em] py-[0.5em] border-primary"
+                >
+                  <span> {{ v.title }} </span>
+                  <span class="i-mdi:external-link text-[0.75em]"></span>
+                </a>
+              </li>
+            </ul>
           </div>
-        </dl>
+        </div>
       </article>
     </li>
   </ul>
