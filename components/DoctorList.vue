@@ -46,17 +46,17 @@ const { data: posts } = useAsyncData('doctors', () =>
             </div>
           </dl>
 
-          <!-- 外部リンクエリア -->
+          <!-- 外部リンクボタンエリア -->
           <div v-if="post.links">
             <ul v-for="v in post.links">
               <li>
                 <a
                   :href="v.href"
                   target="_blank"
-                  class="text-sm w-fit trim flex gap-[0.25em] items-center text-primary-text border-1 px-[1em] py-[0.5em] border-primary"
+                  class="text-xs w-fit trim flex gap-[0.25em] items-center text-primary-text border-1 px-[1em] py-[0.5em] border-primary"
                 >
                   <span> {{ v.title }} </span>
-                  <span class="i-mdi:external-link text-[0.75em]"></span>
+                  <span class="i-mdi:external-link text-[0.85em]"></span>
                 </a>
               </li>
             </ul>
