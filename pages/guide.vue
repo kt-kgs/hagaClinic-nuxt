@@ -26,6 +26,7 @@ useHead({
           <a
             href="https://maps.app.goo.gl/umd2gmZd8ZoFeTw69"
             target="_blank"
+            rel="noopener noreferrer"
             class="flex gap-0.25em items-center text-xs text-black/80"
             ><span class="i-mdi:chevron-right text-primary"></span>Google
             Mapで見る</a
@@ -74,6 +75,7 @@ useHead({
           <a
             href="https://symview.me/medical_interview_flows/hg08386/public/?url_kind=1&openExternalBrowser=1"
             target="_blank"
+            rel="noopener noreferrer"
             class="bg-secondary-text rounded-999px color-ink-inv py-1.5em px-3em w-fit grid gap-0.5em justify-center items-center grid-cols-[auto_auto]"
           >
             <span class="i-mdi:clipboard-account text-1.75em"></span>

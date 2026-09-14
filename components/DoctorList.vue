@@ -53,6 +53,7 @@ const { data: posts } = useAsyncData('doctors', () =>
                 <a
                   :href="v.href"
                   target="_blank"
+                  rel="noopener noreferrer"
                   class="text-xs w-fit trim flex gap-[0.25em] items-center text-primary-text border-1 px-[1em] py-[0.5em] border-primary"
                 >
                   <span> {{ v.title }} </span>
