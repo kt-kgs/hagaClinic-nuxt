@@ -23,7 +23,7 @@ const surroundPosts = await queryContent('news').findSurround(
               <h1 class="text-disp-lg">{{ doc.title }}</h1>
               <template v-if="doc.img">
                 <img
-                  src="/img/noImage.png"
+                  :src="doc.img"
                   class="aspect-16/9 object-cover rounded"
                   alt=""
                 />
