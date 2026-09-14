@@ -27,7 +27,7 @@ useHead({
                   class="grid gap-x-lg gap-y-sm grid-cols-[fluid(125,223)_1fr] grid-rows-[auto_1fr] items-start"
                 >
                   <img
-                    src="/img/noImage.png"
+                    :src="post.img || '/img/noImage.png'"
                     class="row-span-2 rounded aspect-4/3 object-cover"
                     alt=""
                   />
