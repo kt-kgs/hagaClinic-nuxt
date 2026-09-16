@@ -1,6 +1,18 @@
-# Nuxt 3 Minimal Starter
+# 芳賀胃腸科内科クリニック Webサイト
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt 3 + Nuxt Content + UnoCSS で構築。
+
+## お知らせを追加するときのファイル名
+
+`content/news/` に追加するファイルは `YYMMDD-英小文字のスラッグ.md` にすること。
+
+```
+260916-influenza-vaccination.md  →  /news/260916-influenza-vaccination
+```
+
+ドット区切り（`260916.influenza-vaccination.md`）にすると日付がURLから消え、毎年繰り返すお知らせで翌年の記事とURLが衝突して表示されなくなる。
+
+詳細と背景は [CLAUDE.md](./CLAUDE.md) を参照。
 
 ## Setup
 
