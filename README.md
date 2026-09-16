@@ -1,6 +1,8 @@
-# Nuxt 3 Minimal Starter
+# 芳賀胃腸科内科クリニック Webサイト
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt 3 + Nuxt Content + UnoCSS で構築。
+
+お知らせを追加するときのファイル名など、コンテンツ運用のルールは [AGENTS.md](./AGENTS.md) を参照。
 
 ## Setup
 
