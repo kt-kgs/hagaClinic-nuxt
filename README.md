@@ -2,8 +2,6 @@
 
 Nuxt 3 + Nuxt Content + UnoCSS で構築。
 
-お知らせを追加するときのファイル名など、コンテンツ運用のルールは [AGENTS.md](./AGENTS.md) を参照。
-
 ## Setup
 
 Make sure to install the dependencies:
